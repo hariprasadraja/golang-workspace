@@ -1,19 +1,16 @@
 package main
 
 import (
-
+	"log"
 	"path/filepath"
+	"reflect"
 	"runtime"
 	"time"
-	"reflect"
-	"log"
-	"runtime/debug"
 )
 
 func main() {
 	getFileName(1)
 	time.Sleep(time.Hour)
-	debug.
 }
 
 func getFileName(shift int) {
@@ -21,8 +18,8 @@ func getFileName(shift int) {
 		pc, file, line, ok := runtime.Caller(shift)
 		log.Println(reflect.TypeOf(pc))
 		var s []uintptr
-		s = append(s,pc)
-       log.Println(reflect.TypeOf(file))
+		s = append(s, pc)
+		log.Println(reflect.TypeOf(file))
 		log.Println(file)
 		log.Println(reflect.TypeOf(line))
 		log.Println(line)
@@ -32,14 +29,12 @@ func getFileName(shift int) {
 		} else {
 			file = filepath.Base(file)
 		}
-        function :=runtime.FuncForPC(pc)
-		log.Println("functionname",function.Name())
+		function := runtime.FuncForPC(pc)
+		log.Println("functionname", function.Name())
 		log.Println()
 
 		//fmt.Printf("%s:%d", file, line)
 		//frames :=runtime.CallersFrames(s)
 
-
 	}()
 }
-
