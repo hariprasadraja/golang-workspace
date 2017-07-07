@@ -9,15 +9,15 @@ import (
 
 func main() {
 	//{
-	//	"Username": "Autoemail@bevopos.com",
-	//	"Password": "Bevopos@2015",
-	//	"From": "Zenpepper<support@zenpepper.com>",
-	//	"Server": "west.EXCH031.serverdata.net",
+	//	"Username": "User Name",
+	//	"Password": "",
+	//	"From": "Site name",  or your domine
+	//	"Server": "",
 	//	"Port": 587
 	//}
 
 	// using smpt
-	log.Println(sendEmail("template.html", "hariprasad@benseron.com", "Testing"))
+	log.Println(sendEmail("template.html", "to email", "Testing"))
 
 	// no smtp
 	//Nosmtp()
@@ -25,11 +25,11 @@ func main() {
 }
 func sendEmail(htmlTemplate, to, subject string) bool {
 	msg := gomail.NewMessage()
-	msg.SetHeader("From", "Zenpepper<support@zenpepper.com")
+	msg.SetHeader("From", "Sender email")
 	msg.SetHeader("To", to)
 	msg.SetHeader("Subject", subject)
 	msg.SetBody("text/html", htmlTemplate)
-	dialer := gomail.NewPlainDialer("west.EXCH031.serverdata.net", 587, "Autoemail@bevopos.com", "Bevopos@2015")
+	dialer := gomail.NewPlainDialer("{server name}", 587, "{user name}", "{password}")
 	err := dialer.DialAndSend(msg)
 	if err != nil {
 		log.Print("Sending mail to "+to+": ", err)
