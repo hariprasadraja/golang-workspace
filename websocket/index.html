@@ -13,11 +13,11 @@
 
         sock.onopen = function() {
             console.log("connected to " + wsuri);
-        }
+        };
 
         sock.onclose = function(e) {
             console.log("connection closed (" + e.code + ")");
-        }
+        };
 
         sock.onmessage = function(e) {
             console.log("message received: " + e.data);
@@ -27,7 +27,7 @@
     function send() {
         var msg = document.getElementById('message').value;
         sock.send(msg);
-    };
+    }
 </script>
 <h1>WebSocket Echo Test</h1>
 <form>

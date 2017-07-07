@@ -7,11 +7,13 @@ import (
 	"time"
 	"reflect"
 	"log"
+	"runtime/debug"
 )
 
 func main() {
 	getFileName(1)
 	time.Sleep(time.Hour)
+	debug.
 }
 
 func getFileName(shift int) {

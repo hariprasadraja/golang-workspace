@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gopkg.in/gomail.v2"
-	"log"
-	"io"
 	"fmt"
+	"gopkg.in/gomail.v2"
+	"io"
+	"log"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 	//}
 
 	// using smpt
-	//log.Println(sendEmail("template.html","hariprasadcsmails@gmail.com","Testing"))
+	log.Println(sendEmail("template.html", "hariprasad@benseron.com", "Testing"))
 
 	// no smtp
 	//Nosmtp()
@@ -25,11 +25,11 @@ func main() {
 }
 func sendEmail(htmlTemplate, to, subject string) bool {
 	msg := gomail.NewMessage()
-	msg.SetHeader("From", "Hariprasad<hariprasadcsmails@gmail.com>")
+	msg.SetHeader("From", "Zenpepper<support@zenpepper.com")
 	msg.SetHeader("To", to)
 	msg.SetHeader("Subject", subject)
 	msg.SetBody("text/html", htmlTemplate)
-	dialer := gomail.NewPlainDialer("west.EXCH031.serverdata.net",587, "Autoemail@bevopos.com","Bevopos@2015")
+	dialer := gomail.NewPlainDialer("west.EXCH031.serverdata.net", 587, "Autoemail@bevopos.com", "Bevopos@2015")
 	err := dialer.DialAndSend(msg)
 	if err != nil {
 		log.Print("Sending mail to "+to+": ", err)
@@ -38,7 +38,7 @@ func sendEmail(htmlTemplate, to, subject string) bool {
 
 	return true
 }
-func Nosmtp(){
+func Nosmtp() {
 	m := gomail.NewMessage()
 	m.SetHeader("From", "hariprasadcsmails@gmail.com	")
 	m.SetHeader("To", "Hariprasad@benseron.com")

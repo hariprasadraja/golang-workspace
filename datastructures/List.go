@@ -1,11 +1,11 @@
-package main
+package datastructure
 
 import (
-	"github.com/emirpasic/gods/utils"
 	"github.com/emirpasic/gods/lists/arraylist"
+	"github.com/emirpasic/gods/utils"
 )
 
-	func main() {
+func main() {
 	list := arraylist.New()
 	list.Add("a")                         // ["a"]
 	list.Add("c", "b")                    // ["a","c","b"]
@@ -25,5 +25,4 @@ import (
 	list.Clear()                          // []
 	list.Insert(0, "b")                   // ["b"]
 	list.Insert(0, "a")                   // ["a","b"]
-	}
-
+}

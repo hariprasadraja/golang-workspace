@@ -1,28 +1,23 @@
 package main
 
 import (
+	"fmt"
 	"time"
-        "fmt"
 )
 
-
-func main(){
+func main() {
 
 	now := time.Now()
-	fmt.Println(now);
+	fmt.Println(now)
 	fmt.Println(now.Format(time.RFC3339))
 	fmt.Println(now.Format(time.RFC822))
 	fmt.Println(now.Format(time.RFC1123Z))
 	fmt.Println(now.Format(time.RFC850))
 
-
-
 	//seconds :=now.Unix()
 	//fmt.Println(seconds)
 	//nanoseconds := now.UnixNano()
 	//fmt.Println(nanoseconds)
-
-
 
 	//
 	//then := time.Date(

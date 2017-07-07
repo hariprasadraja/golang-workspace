@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func main()  {
+func main() {
 	Names := []string{
 		"vinoth",
 		"hari",
@@ -27,21 +27,21 @@ func main()  {
 	var same []string
 	var diff []string
 	sort.Strings(Names)
-	 for _,Pointer := range Names{
-		 count :=0
-          for _,value := range Names {
-			  if strings.EqualFold(Pointer, value){
-                count = count + 1
-			  }
-		  }
-		 if(count > 1){
-			 diff = append(diff,Pointer)
-		 }else{
-			 same = append(same,Pointer)
-		 }
-       log.Println(count)
+	for _, Pointer := range Names {
+		count := 0
+		for _, value := range Names {
+			if strings.EqualFold(Pointer, value) {
+				count = count + 1
+			}
+		}
+		if count > 1 {
+			diff = append(diff, Pointer)
+		} else {
+			same = append(same, Pointer)
+		}
+		log.Println(count)
 
-	 }
+	}
 	log.Println(diff)
 	log.Println(same)
-	}
+}
