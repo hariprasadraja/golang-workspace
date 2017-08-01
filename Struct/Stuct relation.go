@@ -12,13 +12,6 @@ const StoreName = "store"
 const ZoneName = "Zone"
 const OrderName = "Order"
 
-type DbOperation interface {
-	Save() error
-	Update(id bson.ObjectId) error
-	Remove(id bson.ObjectId) error
-	//Archive()
-}
-
 type DB struct {
 	collection *mgo.Collection
 	child      interface {

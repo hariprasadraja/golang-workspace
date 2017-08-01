@@ -27,6 +27,19 @@
           </option>
           <option name="userDatabase" value="test" />
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="connectOnIdeStartup" value="true" />
+          <option name="label" value="zenpepper" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="roo" />
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="/usr/bin/mongo" />
