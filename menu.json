@@ -1,0 +1,170 @@
+{
+  "_id": ObjectId(
+  "58d227661cd41ba8b5af957b"
+  ),
+  "miExternalID": "45",
+  "name": "Cheese Pizza",
+  "category": "6",
+  "description": "",
+  "nutritions": "",
+  "imageAvailable": false,
+  "taxes": [
+    "1"
+  ],
+  "inclusiveTaxes": [],
+  "externalStore": "21103",
+  "internalStore": ObjectId(
+  "58d227651cd41ba8b5af9529"
+  ),
+  "canSlice": true,
+  "noOfSlice": 4,
+  "dateCreated": ISODate(
+  "2017-03-22T07:27:34.327Z"
+  ),
+  "lastUpdated": ISODate(
+  "2017-03-22T07:27:34.327Z"
+  ),
+  "activeStatus": true,
+  "customConfigs": [
+    {
+      "ssExternalID": "5",
+      "name": "Med",
+      "price": 899,
+      "priceStr": "8.99",
+      "includedModifiers": [
+        {
+          "mgExternalID": "18",
+          "name": "Pizza Topping",
+          "orderSequence": 0,
+          "modifiers": [
+            {
+              "mExternalID": "73",
+              "name": "Stuff Crust",
+              "price": 199,
+              "priceStr": "1.99",
+              "prefixes": [],
+              "imageAvailable": false,
+              "taxes": [
+                "1"
+              ],
+              "inclusiveTaxes": []
+            },
+            {
+              "mExternalID": "7",
+              "name": "Pepperoni",
+              "price": 0,
+              "priceStr": "0.00",
+              "prefixes": [
+                {
+                  "pExternalID": "1",
+                  "name": "No",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "2",
+                  "name": "Extra",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "3",
+                  "name": "Extra Extra",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "4",
+                  "name": "Sub",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                }
+              ],
+              "imageAvailable": false,
+              "taxes": [
+                "1"
+              ],
+              "inclusiveTaxes": []
+            }
+          ],
+          "canSlice": true,
+          "imageAvailable": false
+        }
+      ],
+      "optionalModifiers": [
+        {
+          "mgExternalID": "18",
+          "name": "Pizza Topping",
+          "orderSequence": 0,
+          "modifiers": [
+            {
+              "mExternalID": "73",
+              "name": "Stuff Crust",
+              "price": 199,
+              "priceStr": "1.99",
+              "prefixes": [],
+              "imageAvailable": false,
+              "taxes": [
+                "1"
+              ],
+              "inclusiveTaxes": []
+            },
+            {
+              "mExternalID": "7",
+              "name": "Pepperoni",
+              "price": 0,
+              "priceStr": "0.00",
+              "prefixes": [
+                {
+                  "pExternalID": "1",
+                  "name": "No",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "2",
+                  "name": "Extra",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "3",
+                  "name": "Extra Extra",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                },
+                {
+                  "pExternalID": "4",
+                  "name": "Sub",
+                  "upCharge": 0,
+                  "upChargeStr": "0.00"
+                }
+              ],
+              "imageAvailable": false,
+              "taxes": [
+                "1"
+              ],
+              "inclusiveTaxes": []
+            },
+            {
+              "mExternalID": "55",
+              "name": "Sausage",
+              "price": 0,
+              "priceStr": "0.00",
+              "prefixes": [],
+              "imageAvailable": false,
+              "taxes": [
+                "1"
+              ],
+              "inclusiveTaxes": []
+            }
+          ],
+          "canSlice": true,
+          "imageAvailable": false
+        }
+      ],
+      "mandatoryModifiers": [
+      ]
+    }
+  ]
+}

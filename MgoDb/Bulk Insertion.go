@@ -17,32 +17,40 @@ type Content struct {
 
 func main() {
 
-	var content []interface{}
+	init_CategoryBulk()
 
-	customerDetail := customerInfo{"Name": " 1"}
-	content = append(content, customerDetail)
+}
 
-	log.Println("info: ", content)
+func init_CategoryBulk() {
+	categories := []Content{
+		{
+			Name: "test modifier",
+		},
+		{
+			Name: "test mod there",
+		},
+	}
 
-	db := connectDatabase("test")
-	//bulk :=db.C("bulk").Bulk()
-	//bulk.Insert(&content)
+	data := []interface{}{}
+	for _, category := range categories {
+		data = append(data, category)
+	}
 
-	//db.C("bulk").Insert(customer)
-	bulk := db.C("Bulk").Bulk()
-	//bulk.Insert(content...)
-	//result,err :=bulk.Run()
-	//fmt.Printf("%+v",result)
-	//fmt.Printf("Error:",err)
-	bulk.RemoveAll(content...)
+	bulk := connectDatabase("Bulk").C("category").Bulk()
+	bulk.Insert(data...)
+	_, err := bulk.Run()
+	log.Print(err)
+}
+
+func InsertBulk(data []interface{}) {
+	db := connectDatabase("BulkInsert")
+	bulk := db.C("bulk").Bulk()
+	bulk.Insert(data...)
+
 	_, err := bulk.Run()
 	if err != nil {
-		log.Println(err)
+		log.Print("Error in Insert", err.Error())
 	}
-	//
-	//collection := db.C("bulk")
-	//testBulkInsert(collection)
-
 }
 
 func testBulkInsert(Coll *mgo.Collection) {

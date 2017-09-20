@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	res := utils.SHAEncode("welcome123")
 	log.Println(res)
 }

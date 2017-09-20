@@ -15,7 +15,7 @@ func main() {
 		"West":  912,
 	}
 
-	var Direction []interface{}
+	var Direction interface{}
 
 	DB := connectDatabase()
 
@@ -24,9 +24,8 @@ func main() {
 	DB.C("testing").Insert(direction)
 
 	//Cn.Find(bson.M{"North":3711}).One(&Direction)
-	log.Println(Direction)
 	//
-	Cn.Find(bson.M{"North": 3711}).All(&Direction)
+	Cn.Find(bson.M{"North": 3711}).Select(bson.M{"South": 0}).One(&Direction)
 	log.Println(Direction)
 
 	//

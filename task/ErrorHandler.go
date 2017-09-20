@@ -5,16 +5,15 @@ import (
 )
 
 type DBError struct {
-	code string
+	code    string
 	message string
 }
 
 type ValidationErr struct {
-	code string
+	code    string
 	message string
-	Errors *ValidationErr
+	Errors  *ValidationErr
 }
-
 
 //type Error struct {
 //	code string
@@ -22,30 +21,28 @@ type ValidationErr struct {
 //	Error *ValidationErr
 //}
 
-
-
 // Returns the Type of Error either
 // DB or Validation
-func ErrHandler(err interface{})error{
+func ErrHandler(err interface{}) error {
 	switch err {
-	case err.(*DBError) : {
-		 DBErr := err.(*DBError)
-		error := errors.Errorf("%s",DBErr.message)
-		return error
-	}
+	case err.(*DBError):
+		{
+			DBErr := err.(*DBError)
+			error := errors.Errorf("%s", DBErr.message)
+			return error
+		}
 
-	case err.(*ValidationErr) : {
-		ValidErr := err.(*ValidationErr)
-		error := errors.Errorf("%s",ValidErr.message)
-		return error
+	case err.(*ValidationErr):
+		{
+			ValidErr := err.(*ValidationErr)
+			error := errors.Errorf("%s", ValidErr.message)
+			return error
+		}
 	}
-	}
-     return nil
+	return nil
 }
 
-
-
-func main(){
+func main() {
 	err := &DBError{}
 	err.code = "10"
 	ErrHandler(err)
