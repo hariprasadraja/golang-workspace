@@ -43,11 +43,11 @@ func main() {
 	//DB.C("testing").
 }
 
-func connectDatabase() *mgo.Database {
-	session, err := mgo.Dial("localhost:27017")
-	if err != nil {
-		log.Print(err)
-	}
-	session.SetMode(mgo.Monotonic, true)
-	return session.DB("learn")
-}
+//func connectDatabase() *mgo.Database {
+//	session, err := mgo.Dial("localhost:27017")
+//	if err != nil {
+//		log.Print(err)
+//	}
+//	session.SetMode(mgo.Monotonic, true)
+//	return session.DB("Linga")
+//}

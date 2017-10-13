@@ -82,12 +82,12 @@ func testBulkInsert(Coll *mgo.Collection) {
 		panic(err)
 	}
 }
-
-func connectDatabase(dbName string) *mgo.Database {
-	session, err := mgo.Dial("localhost:27017")
-	if err != nil {
-		log.Print(err)
-	}
-	session.SetMode(mgo.Monotonic, true)
-	return session.DB(dbName)
-}
+//
+//func connectDatabase(dbName string) *mgo.Database {
+//	session, err := mgo.Dial("localhost:27017")
+//	if err != nil {
+//		log.Print(err)
+//	}
+//	session.SetMode(mgo.Monotonic, true)
+//	return session.DB(dbName)
+//}

@@ -21,7 +21,7 @@ func main() {
 		return
 	}
 
-	pdf.Cell(nil, "தயாதsdfளமனகரைந")
+	pdf.Cell(nil, "")
 	pdf.WritePdf("hello.pdf")
 
 }
