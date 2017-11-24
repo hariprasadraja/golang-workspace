@@ -1,2 +1,3 @@
-# Google-Go-Programming
-Learning Google Go language
+# Golang WorkSpace
+
+A Collection of works in Golang.
