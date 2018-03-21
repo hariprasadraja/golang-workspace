@@ -12,47 +12,39 @@ import (
 	//"io/ioutil"
 	//"encoding/json"
 	//"errors"
+	"io/ioutil"
+	"net/http"
+	"encoding/json"
 )
-
-//const(
-//	GraveDevil  =	30101
-//    stagingAdmin = 58eb24a49230ca6124a58699
-//)
 
 func main() {
 
 	//res := make(map[string]interface{})
 
-	//grave Devil production
-	//url := "http://admin.zenpepper.com/store/30101/placedOrders?token=3fe24a4e-5e9c-453d-9f70-42550d82b840" // grave Devil Production
-	//url := "https://stagingadmin.zenpepper.com/store/58eb24a49230ca6124a58699/placedOrders?token=170e30de-163e-427e-978c-91a53f5bcf2c"
+	//var ok <-chan time.Time
+	//data := time.Now()
+	//ok <- data
+	for range time.Tick(time.Second * 10) {
+		resp, err := http.Get(url)
+		if err != nil {
+			log.Print(err.Error())
+		}
+		if (resp != nil) {
+			data, err := ioutil.ReadAll(resp.Body)
+			if err != nil {
+				log.Println(err)
+			}
 
-	//url := "https://stagingadmin.zenpepper.com/store/58eb24a49230ca6124a58699/placedOrders?token=170e30de-163e-427e-978c-91a53f5bcf2c"
+			res := make(map[string]interface{})
+			json.Unmarshal(data, res)
+			for key, val := range res {
+				log.Println(key, ":", val)
+			}
 
-	var ok <-chan time.Time
-	data := time.Now()
-	ok <- data
-	for ok {
+		} else {
+			log.Println("empty")
+		}
 
-		log.Println("check", ok)
-		ok = Tick(time.Minute * 10)
-
-		//resp, _ := http.Get(url)
-		//if (resp != nil) {
-		//	data, err := ioutil.ReadAll(resp.Body)
-		//	if err != nil {
-		//		log.Println(err)
-		//	}
-		//
-		//	json.Unmarshal(data, res)
-		//	for key, val := range res {
-		//		log.Println(key, ":", val)
-		//	}
-		//
-		//} else {
-		//	log.Println("empty")
-		//}
-		//
 	}
 }
 

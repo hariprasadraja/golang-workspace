@@ -12,7 +12,7 @@ import (
 func main() {
 	var wg sync.WaitGroup
 	wg.Add(5)
-	url := "http://localhost:9000/"
+	url := "http://localhost:8085"
 	logFile, err := os.OpenFile("log", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0777)
 	if err != nil {
 		fmt.Printf("Error in openning log file: %s", err.Error())
