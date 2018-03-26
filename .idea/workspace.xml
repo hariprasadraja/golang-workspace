@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b910c3f7-ede5-46d4-ae94-2c21ba7be033" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/GOPATH__Hariprasad_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Combination/Combinations.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Hashing/hashtest_1.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Yaag.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/checkRedemPoints.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/new file.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Hariprasad.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/preferred-vcs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="b910c3f7-ede5-46d4-ae94-2c21ba7be033" name="Default" comment="Slice Tricks - Init" />
+    <list id="8269474a-ce8a-4fb7-a01b-7b6ab7b1a00a" name="New changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DOS Attack - Simple/main.go" afterPath="$PROJECT_DIR$/DOS Attack - Simple/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/others/hitinTime.go" afterPath="$PROJECT_DIR$/others/hitinTime.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/password/pass1.go" afterPath="$PROJECT_DIR$/password/pass1.go" />
     </list>
     <ignored path="Hariprasad.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,69 +25,51 @@
     <favorites_list name="Hariprasad" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new file.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new file.go">
+    <leaf>
+      <file leaf-file-name="Pop.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SliceTricks/Pop.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="86">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding>
-                <element signature="e#14#182#0" expanded="true" />
+                <element signature="e#13#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeliveryZone.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../zenpepper.com/zenpepper/server/models/DeliveryZone.go">
+      <file leaf-file-name="Push.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SliceTricks/Push.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hitinTime.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/others/hitinTime.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="342">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <element signature="e#14#209#0" expanded="true" />
+                <element signature="e#14#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pass1.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pass1.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/password/pass1.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seek method.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Go Packages Learning/ioPackage/seek method.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <element signature="e#147#198#0" expanded="true" />
+                <element signature="e#14#67#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Combinations.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Combination/Combinations.go">
+      <file leaf-file-name="Password.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../zenpepper.com/zenpepper/server/utils/Password.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#SHAEncode#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,14 +100,16 @@
         <option value="$PROJECT_DIR$/new file.go" />
         <option value="$PROJECT_DIR$/Yaag.gp.go" />
         <option value="$PROJECT_DIR$/Yaag.go" />
+        <option value="$PROJECT_DIR$/Combination/Combinations.go" />
+        <option value="$PROJECT_DIR$/SliceTricks/Pop.go" />
+        <option value="$PROJECT_DIR$/SliceTricks/Push.go" />
+        <option value="$PROJECT_DIR$/password/pass1.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1366" />
-    <option name="y" value="-28" />
     <option name="width" value="1366" />
-    <option name="height" value="796" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -166,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -195,7 +164,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Combination" />
+              <option name="myItemId" value="password" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -203,6 +172,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,43 +183,44 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="io&#9;FILE&#9;file:///usr/local/go/src/io/io.go&#10;pass&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/password/pass1.go&#10;hit&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/others/hitinTime.go&#10;hi&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/others/hitinTime.go" />
+    <property name="SearchEverywhereHistoryKey" value="pass&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/password/pass1.go&#10;io&#9;FILE&#9;file:///usr/local/go/src/io/io.go&#10;hit&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/others/hitinTime.go&#10;hi&#9;FILE&#9;file:///home/parvathavarthinik/kpm/goworkspace/src/Hariprasad/others/hitinTime.go" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Combination" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Single File.go run pass1.go">
-    <configuration default="false" name="go run hashtest_1.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
-      <module name="Hariprasad" />
-      <working_directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/Hashing/hashtest_1.go" />
-      <method />
-    </configuration>
-    <configuration default="false" name="go run hitinTime.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
-      <module name="Hariprasad" />
-      <working_directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/others/hitinTime.go" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Go Single File.go run Push.go">
     <configuration default="false" name="go run pass1.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
       <module name="Hariprasad" />
       <working_directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/password/pass1.go" />
       <method />
     </configuration>
-    <configuration default="false" name="go run checkRedemPoints.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
-      <module name="Hariprasad" />
-      <working_directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/checkRedemPoints.go" />
-      <method />
-    </configuration>
     <configuration default="false" name="go run new file.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
       <module name="Hariprasad" />
       <working_directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/new file.go" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run Combinations.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="Hariprasad" />
+      <working_directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Combination/Combinations.go" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run Pop.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="Hariprasad" />
+      <working_directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/SliceTricks/Pop.go" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run Push.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="Hariprasad" />
+      <working_directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/SliceTricks/Push.go" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -563,19 +534,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Single File.go run hashtest_1.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run hitinTime.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run pass1.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Single File.go run checkRedemPoints.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Single File.go run new file.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Single File.go run pass1.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run new file.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run Combinations.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Single File.go run Pop.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Single File.go run Push.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run pass1.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Single File.go run new file.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Single File.go run checkRedemPoints.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run hitinTime.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run hashtest_1.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run Push.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Single File.go run Pop.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Single File.go run pass1.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run Combinations.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run new file.go" />
       </list>
     </recent_temporary>
   </component>
@@ -593,39 +564,48 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b910c3f7-ede5-46d4-ae94-2c21ba7be033" name="Default" comment="" />
+      <changelist id="8269474a-ce8a-4fb7-a01b-7b6ab7b1a00a" name="New changelist" comment="" />
       <created>1516100915974</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516100915974</updated>
     </task>
+    <task id="LOCAL-00001" summary="Slice Tricks - Init">
+      <created>1522050371265</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1522050371265</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1366" y="-28" width="1366" height="796" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2797619" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39885223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27833572" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19318181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20227273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4212963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,6 +647,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/gplus-quickstart-go" />
     </ignored-roots>
+    <MESSAGE value="Slice Tricks - Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slice Tricks - Init" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -675,27 +658,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/password/pass1.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/others/hitinTime.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hashing/hashtest_1.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Runner/runner.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -984,6 +946,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Yaag.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/others/hitinTime.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../zenpepper.com/zenpepper/server/models/DeliveryZone.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -992,56 +968,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/password/pass1.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Yaag.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new file.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="414">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/others/hitinTime.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#209#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Go Packages Learning/ioPackage/seek method.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
+        <state relative-caret-position="180">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#147#198#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Combination/Combinations.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="144">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SliceTricks/Pop.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#13#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SliceTricks/Push.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../zenpepper.com/zenpepper/server/utils/Password.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#SHAEncode#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password/pass1.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

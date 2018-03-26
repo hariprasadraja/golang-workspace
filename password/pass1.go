@@ -2,10 +2,26 @@ package main
 
 import (
 	"log"
-	"zenpepper.com/zenpepper/server/utils"
+	"crypto/sha256"
+	"encoding/base64"
 )
 
+
+func SHAEncode(target string) (output string) {
+	targetBytes := []byte(target)
+
+	enc := sha256.New()
+	enc.Write(targetBytes)
+
+	output = base64.StdEncoding.EncodeToString(enc.Sum(nil))
+
+	return
+}
+
+
+
+
 func main() {
-	res := utils.SHAEncode("welcome123")
+	res := SHAEncode("callcenter123")
 	log.Println(res)
 }
