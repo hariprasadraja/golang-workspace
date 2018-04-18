@@ -1,10 +1,6 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;Hariprasad&gt;">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../public" />
-      <root url="file://$PROJECT_DIR$/../cloud.google.com" />
-      <root url="file://$PROJECT_DIR$/../lingapos-copy" />
-      <root url="file://$PROJECT_DIR$/../.idea" />
       <root url="file://$PROJECT_DIR$/../src" />
       <root url="file://$PROJECT_DIR$/../github.com" />
       <root url="file://$PROJECT_DIR$/../golang.org" />
@@ -13,9 +9,9 @@
       <root url="file://$PROJECT_DIR$/../lingapos" />
       <root url="file://$PROJECT_DIR$/../.git" />
       <root url="file://$PROJECT_DIR$/../tests" />
+      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../reportServer" />
       <root url="file://$PROJECT_DIR$/../google.golang.org" />
-      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../messages" />
       <root url="file://$PROJECT_DIR$/../sourcegraph.com" />
       <root url="file://$PROJECT_DIR$/../Satya Front Tip" />
@@ -23,13 +19,13 @@
       <root url="file://$PROJECT_DIR$/../conf" />
       <root url="file://$PROJECT_DIR$/../inventory" />
       <root url="file://$PROJECT_DIR$/../pkg" />
+      <root url="file://$PROJECT_DIR$/../public" />
+      <root url="file://$PROJECT_DIR$/../cloud.google.com" />
+      <root url="file://$PROJECT_DIR$/../lingapos-copy" />
+      <root url="file://$PROJECT_DIR$/../.idea" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../public" />
-      <root url="file://$PROJECT_DIR$/../cloud.google.com" />
-      <root url="file://$PROJECT_DIR$/../lingapos-copy" />
-      <root url="file://$PROJECT_DIR$/../.idea" />
       <root url="file://$PROJECT_DIR$/../src" />
       <root url="file://$PROJECT_DIR$/../github.com" />
       <root url="file://$PROJECT_DIR$/../golang.org" />
@@ -38,9 +34,9 @@
       <root url="file://$PROJECT_DIR$/../lingapos" />
       <root url="file://$PROJECT_DIR$/../.git" />
       <root url="file://$PROJECT_DIR$/../tests" />
+      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../reportServer" />
       <root url="file://$PROJECT_DIR$/../google.golang.org" />
-      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../messages" />
       <root url="file://$PROJECT_DIR$/../sourcegraph.com" />
       <root url="file://$PROJECT_DIR$/../Satya Front Tip" />
@@ -48,6 +44,10 @@
       <root url="file://$PROJECT_DIR$/../conf" />
       <root url="file://$PROJECT_DIR$/../inventory" />
       <root url="file://$PROJECT_DIR$/../pkg" />
+      <root url="file://$PROJECT_DIR$/../public" />
+      <root url="file://$PROJECT_DIR$/../cloud.google.com" />
+      <root url="file://$PROJECT_DIR$/../lingapos-copy" />
+      <root url="file://$PROJECT_DIR$/../.idea" />
     </SOURCES>
     <excluded>
       <root url="file://$PROJECT_DIR$" />

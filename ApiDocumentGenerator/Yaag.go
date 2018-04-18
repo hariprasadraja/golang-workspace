@@ -1,13 +1,12 @@
 
 //Yaag is the one of the simple api document generator.
-
 package main
 
 import (
 	"fmt"
-	"github.com/betacraft/yaag/yaag"
 	"net/http"
-	"github.com/betacraft/yaag/middleware"
+	"github.com/hariprasadraja/yaag/yaag"
+	"github.com/hariprasadraja/yaag/middleware"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {

@@ -143,8 +143,6 @@ func (k *Key) String() string {
 	return data
 }
 
-
-
 func (k *Key) validate() error {
      return nil
 }
