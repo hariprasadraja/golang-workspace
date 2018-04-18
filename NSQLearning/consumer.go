@@ -20,7 +20,7 @@ func main() {
 		return nil
 	}))
 
-	err := q.ConnectToNSQD("127.0.0.1:4150")
+	err := q.ConnectToNSQD("127.0.0.1:4160")
 	if err != nil {
 		log.Panic("Could not connect")
 	}
