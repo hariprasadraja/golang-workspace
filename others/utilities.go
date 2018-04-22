@@ -23,6 +23,4 @@ func main() {
 		log.Println(len(alphanumRunes))
 		log.Println(rand.Intn(len(alphanumRunes)))
 	}
-      //rand.Seed(rand.Int63())
-
 }
