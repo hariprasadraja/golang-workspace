@@ -1,3 +1,44 @@
+/* 
+Binary Trees are the Trees which can have a maximum of two leaves for each node. 
+example:
+              1
+        2  			3
+		4		5	6		7     
+
+
+Properties: 
+1. maximum posible elements for n internalNodes is (2^n -1) .
+2. minimum possible elements for n internalNodes is Log base 2 (n) + 1. => say as l2n plus 1
+3. minimum possible level for n leafNodes is Log base 2 (N + 1)  => say as l2  
+4. number of leaf nodes is always greater than internalNodes.  
+    leafNodes = internalNodes + 1
+
+Types: 
+1. Full Binary Tree - each node must have either 0 or 2 elements. 
+2. Complete Binary Tree - last internal node is completely filled with no elements left for further operations. 
+3. Perfect Binary Tree - It satisfies Property[1]. All nodes have exactly two elements. 
+4. Balanced Binary Tree - Trees having n levels statisfies O(Log n). They also provide O(Log n) for search operations.  
+   performance wise, Balanced Binary Tree is prefered. 
+5. Pathological Tree - All the Internal node has exactly only one element. It looks and acts similiar to linked list.  
+
+
+Calcualtions: 
+  if total Leaves = 10 then
+   minimum possible levels : Log base (11) = 3.45  = ~ 3 nodes. 
+
+  if 3 internalNodes then 
+  maximum possible leaves nodes : 2^3 -1 = 8 -1 = 7 elements 
+  minimum possible leaves nodes : Log base 2 (n) + 1 = 2.5  = ~3 elements. 
+
+                        		1                                  level #1
+						2				3						   level #2
+				4			5		6			7           	   level #3	
+			8		9	10							
+											max possible
+											leaf node
+
+
+ */
 package main
 
 import (
