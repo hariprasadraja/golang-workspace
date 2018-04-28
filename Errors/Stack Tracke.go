@@ -2,8 +2,8 @@ package Errors
 
 import (
 	"fmt"
-	"log"
 	"github.com/pkg/errors"
+	"log"
 )
 
 // printErrStack prints the needed stack trace for the errors created via db operations.
@@ -12,7 +12,7 @@ func printErrStack(err error) error {
 		StackTrace() errors.StackTrace
 	}
 
-	err = errors.Wrap(err,"Error")
+	err = errors.Wrap(err, "Error")
 	log.Print(err)
 	newErr, ok := err.(stackTracer)
 	if !ok {

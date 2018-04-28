@@ -2,9 +2,9 @@ package main
 
 import (
 	"archive/zip"
-	"log"
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 

@@ -33,7 +33,7 @@ func mergeSort(items []int) []int {
 
 	middle := int(num / 2)
 	var (
-		left = make([]int, middle)
+		left  = make([]int, middle)
 		right = make([]int, num-middle)
 	)
 	for i := 0; i < num; i++ {
@@ -48,7 +48,7 @@ func mergeSort(items []int) []int {
 }
 
 func merge(left, right []int) (result []int) {
-	result = make([]int, len(left) + len(right))
+	result = make([]int, len(left)+len(right))
 
 	i := 0
 	for len(left) > 0 && len(right) > 0 {
@@ -73,4 +73,3 @@ func merge(left, right []int) (result []int) {
 
 	return
 }
-

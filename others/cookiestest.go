@@ -23,7 +23,7 @@ func foo(res http.ResponseWriter, req *http.Request) {
 			Value: "0",
 		}
 	}
-        log.Print(cookie.Value)
+	log.Print(cookie.Value)
 
 	count, err := strconv.Atoi(cookie.Value)
 	if err != nil {

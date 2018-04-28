@@ -1,13 +1,16 @@
 // This sample program demonstrates how to use an unbuffered
 // channel to simulate a relay race between four goroutines.
 package main
+
 import (
 	"fmt"
 	"sync"
 	"time"
 )
+
 // wg is used to wait for the program to finish.
 var wg sync.WaitGroup
+
 // main is the entry point for all Go programs.
 func main() {
 	// Create an unbuffered channel.
@@ -21,6 +24,7 @@ func main() {
 	// Wait for the race to finish.
 	wg.Wait()
 }
+
 // Runner simulates a person running in the relay race.
 func Runner(baton chan int) {
 	var newRunner int

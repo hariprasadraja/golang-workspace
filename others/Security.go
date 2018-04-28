@@ -1,7 +1,6 @@
 package main
 
 import (
-
 	"crypto/sha256"
 	"encoding/base64"
 )
@@ -17,6 +16,6 @@ func SHAEncode(target string) (output string) {
 	enc.Write(targetBytes)
 
 	output = base64.StdEncoding.EncodeToString(enc.Sum(nil))
-     println(output)
+	println(output)
 	return
 }

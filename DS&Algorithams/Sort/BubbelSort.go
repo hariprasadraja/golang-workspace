@@ -27,7 +27,7 @@ func generateSlice(size int) []int {
 
 func bubblesort(items []int) {
 	var (
-		n = len(items)
+		n      = len(items)
 		sorted = false
 	)
 	for !sorted {

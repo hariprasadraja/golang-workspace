@@ -1,15 +1,15 @@
 package controllers
 
 import (
-	"net/http"
-	"gopkg.in/mgo.v2/bson"
-	"github.com/julienschmidt/httprouter"
-	"simpleGoServer/server/models"
 	"encoding/json"
 	"fmt"
+	"github.com/julienschmidt/httprouter"
+	"gopkg.in/mgo.v2/bson"
 	"io/ioutil"
-	"time"
+	"net/http"
 	"simpleGoServer/server/con"
+	"simpleGoServer/server/models"
+	"time"
 )
 
 func renderJson(w http.ResponseWriter, code int, res interface{}) {
@@ -75,4 +75,3 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 
 	renderJson(w, http.StatusOK, user)
 }
-

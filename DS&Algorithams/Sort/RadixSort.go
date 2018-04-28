@@ -9,7 +9,6 @@ import (
 const digit = 4
 const maxbit = -1 << 31
 
-
 func main() {
 
 	var data = []int32{421, 15, -175, 90, -2, 214, -52, -166}
@@ -43,6 +42,6 @@ func radixsort(data []int32) {
 	for i, b := range ds {
 		buf.Write(b)
 		binary.Read(buf, binary.LittleEndian, &w)
-		data[i] = w^maxbit
+		data[i] = w ^ maxbit
 	}
 }

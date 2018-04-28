@@ -1,12 +1,12 @@
 package main
 
 import (
-	"log"
 	"fmt"
+	"log"
 )
 
 func main() {
-	a:=1
+	a := 1
 	log.Println(a)
 
 	fmt.Println(a)

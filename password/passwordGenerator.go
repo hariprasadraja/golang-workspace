@@ -1,11 +1,10 @@
 package main
 
 import (
-	"log"
 	"crypto/sha256"
 	"encoding/base64"
+	"log"
 )
-
 
 func SHAEncode(target string) (output string) {
 	targetBytes := []byte(target)
@@ -17,9 +16,6 @@ func SHAEncode(target string) (output string) {
 
 	return
 }
-
-
-
 
 func main() {
 	res := SHAEncode("callcenter123")

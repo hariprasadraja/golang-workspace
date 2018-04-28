@@ -2,9 +2,9 @@ package main
 
 import (
 	//"runtime"
-	"sync"
 	"fmt"
 	"runtime"
+	"sync"
 )
 
 // main is the entry point for all Go programs.

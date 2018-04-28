@@ -10,6 +10,6 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-  
-	http.ListenAndServe(":8080",ServeHTTP)
+
+	http.ListenAndServe(":8080", ServeHTTP)
 }

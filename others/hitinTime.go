@@ -12,9 +12,9 @@ import (
 	//"io/ioutil"
 	//"encoding/json"
 	//"errors"
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"encoding/json"
 )
 
 func main() {
@@ -29,7 +29,7 @@ func main() {
 		if err != nil {
 			log.Print(err.Error())
 		}
-		if (resp != nil) {
+		if resp != nil {
 			data, err := ioutil.ReadAll(resp.Body)
 			if err != nil {
 				log.Println(err)

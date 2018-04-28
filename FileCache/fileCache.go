@@ -89,7 +89,7 @@ func Get(k *Key, dst interface{}) error {
 			break
 		}
 	}
-	if err = json.Unmarshal(serialized,&dst); err != nil {
+	if err = json.Unmarshal(serialized, &dst); err != nil {
 		return err
 	}
 
@@ -121,7 +121,6 @@ func clean(key string) {
 	}
 }
 
-
 type Key struct {
 	Account    bson.ObjectId
 	Store      bson.ObjectId
@@ -129,7 +128,6 @@ type Key struct {
 	Id         bson.ObjectId
 	Suffix     string
 }
-
 
 // Stringify the Key
 func (k *Key) String() string {
@@ -144,7 +142,7 @@ func (k *Key) String() string {
 }
 
 func (k *Key) validate() error {
-     return nil
+	return nil
 }
 
 func main() {
@@ -184,9 +182,9 @@ func main() {
 	}
 
 	var data interface{}
-	err = Get(&key,&data)
+	err = Get(&key, &data)
 	if err != nil {
-		log.Print("Error",err)
+		log.Print("Error", err)
 	}
 
 	log.Print(data)

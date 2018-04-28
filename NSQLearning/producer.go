@@ -1,8 +1,8 @@
 package main
 
 import (
-"log"
-"github.com/bitly/go-nsq"
+	"github.com/bitly/go-nsq"
+	"log"
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 
 	err := w.Publish("write_test", []byte("test"))
 	if err != nil {
-		log.Panic("Could not connect",err.Error())
+		log.Panic("Could not connect", err.Error())
 	}
 
 	w.Stop()

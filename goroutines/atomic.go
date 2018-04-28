@@ -2,33 +2,37 @@
 // package functions Store and Load to provide safe access
 // to numeric types.
 package main
+
 import (
-"fmt"
-"sync"
-"sync/atomic"
-"time"
+	"fmt"
+	"sync"
+	"sync/atomic"
+	"time"
 )
+
 var (
-// shutdown is a flag to alert running goroutines to shutdown.
-shutdown int64
-// wg is used to wait for the program to finish.
-wg sync.WaitGroup
+	// shutdown is a flag to alert running goroutines to shutdown.
+	shutdown int64
+	// wg is used to wait for the program to finish.
+	wg sync.WaitGroup
 )
+
 // main is the entry point for all Go programs.
 func main() {
-// Add a count of two, one for each goroutine.
-wg.Add(2)
-// Create two goroutines.
-go doWork("A")
-go doWork("B")
-// Give the goroutines time to run.
-time.Sleep(1 * time.Second)
-// Safely flag it is time to shutdown.
-fmt.Println("Shutdown Now")
-atomic.StoreInt64(&shutdown, 1)
-// Wait for the goroutines to finish.
-wg.Wait()
+	// Add a count of two, one for each goroutine.
+	wg.Add(2)
+	// Create two goroutines.
+	go doWork("A")
+	go doWork("B")
+	// Give the goroutines time to run.
+	time.Sleep(1 * time.Second)
+	// Safely flag it is time to shutdown.
+	fmt.Println("Shutdown Now")
+	atomic.StoreInt64(&shutdown, 1)
+	// Wait for the goroutines to finish.
+	wg.Wait()
 }
+
 // doWork simulates a goroutine performing work and
 // checking the Shutdown flag to terminate early.
 func doWork(name string) {

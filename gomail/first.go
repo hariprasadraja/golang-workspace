@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+
 	//{
 	//	"Username": "User Name",
 	//	"Password": "",
@@ -23,6 +24,7 @@ func main() {
 	//Nosmtp()
 
 }
+
 func sendEmail(htmlTemplate, to, subject string) bool {
 	msg := gomail.NewMessage()
 	msg.SetHeader("From", "Sender email")
@@ -38,10 +40,11 @@ func sendEmail(htmlTemplate, to, subject string) bool {
 
 	return true
 }
+
 func Nosmtp() {
 	m := gomail.NewMessage()
-	m.SetHeader("From", "hariprasadcsmails@gmail.com	")
-	m.SetHeader("To", "Hariprasad@benseron.com")
+	m.SetHeader("From", "")
+	m.SetHeader("To", "")
 	m.SetHeader("Subject", "Hello!")
 	m.SetBody("text/plain", "Hello!")
 

@@ -27,10 +27,9 @@ func generateSlice(size int) []int {
 
 func shellsort(items []int) {
 	var (
-		n = len(items)
+		n    = len(items)
 		gaps = []int{1}
-		k = 1
-
+		k    = 1
 	)
 
 	for {

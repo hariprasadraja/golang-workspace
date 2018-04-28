@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func interpolationSearch(array []int, key int) int {
@@ -46,8 +47,7 @@ func interpolationSearch(array []int, key int) int {
 	}
 }
 
-
-func main(){
-	items := []int{1,2, 9, 20, 31, 45, 63, 70, 100}
-	fmt.Println(interpolationSearch(items,63))
+func main() {
+	items := []int{1, 2, 9, 20, 31, 45, 63, 70, 100}
+	fmt.Println(interpolationSearch(items, 63))
 }

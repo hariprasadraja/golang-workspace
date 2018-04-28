@@ -8,17 +8,14 @@ func main() {
 	go connect("myhost", "100", pipe)
 	out := <-pipe
 
-
-   log.Print(out)
+	log.Print(out)
 
 }
 
-
-
 func connect(host string, url string, pipe chan<- map[string]string) {
-	log.Print("Trying "+url)
+	log.Print("Trying " + url)
 	var lpipe map[string]string
 	lpipe = make(map[string]string)
-	lpipe["resp"], lpipe["err"] = "aaa","bbb"
+	lpipe["resp"], lpipe["err"] = "aaa", "bbb"
 	pipe <- lpipe
 }

@@ -2,9 +2,9 @@ package main
 
 import (
 	"bufio"
-	"log"
 	"bytes"
 	"io"
+	"log"
 )
 
 func main() {
@@ -21,15 +21,14 @@ func main() {
 		panic(err)
 	}
 
-	wirter :=new(io.Writer)
-	const input= "1234 5678 1234567 9012345 67890"
+	wirter := new(io.Writer)
+	const input = "1234 5678 1234567 9012345 67890"
 	Reader := bufio.NewReader(bytes.NewBufferString(input))
 	Writer := bufio.NewWriter(*wirter)
-	ReaderWriter :=bufio.NewReadWriter(Reader,Writer)
+	ReaderWriter := bufio.NewReadWriter(Reader, Writer)
 	log.Println(ReaderWriter.Read(buffer))
-    log.Println(ReaderWriter.Peek(10))
-    log.Println(ReaderWriter.WriteTo(Writer))
+	log.Println(ReaderWriter.Peek(10))
+	log.Println(ReaderWriter.WriteTo(Writer))
 	log.Println(Writer.Available())
-
 
 }

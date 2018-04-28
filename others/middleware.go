@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/justinas/alice"
 	"log"
 	"net/http"
-	"github.com/justinas/alice"
 )
 
 type numberDumper int
@@ -12,8 +12,8 @@ type numberDumper int
 func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("ServeHttp")
 	fmt.Fprintf(w, "Here's your number: %d\n", n)
-	a:="hello buddy"
-	b:= []byte(a)
+	a := "hello buddy"
+	b := []byte(a)
 	w.Write(b)
 }
 
@@ -42,7 +42,7 @@ func (hs headerSetter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func newHeaderSetter(key, val string) func(http.Handler) http.Handler {
 	fmt.Println("newHeaderSetter")
-	return func(h http.Handler) http.Handler {   // it satisfies the constructor
+	return func(h http.Handler) http.Handler { // it satisfies the constructor
 		return headerSetter{key, val, h}
 	}
 }

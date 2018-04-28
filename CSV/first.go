@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
-	"log"
 	"encoding/csv"
+	"log"
+	"os"
 )
 
 var data = []string{"Reason", "Request", "Error"}

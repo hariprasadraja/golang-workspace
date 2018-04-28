@@ -4,6 +4,4 @@ import "fmt"
 
 func main() {
 
-
-
 }

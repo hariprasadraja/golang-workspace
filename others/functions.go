@@ -5,17 +5,17 @@ import "fmt"
 // function which retuns a single value
 
 func function1(a string) string {
-  defer fmt.Println("this program runs at exit")
-  for i:=0;i<5;i++ {
-  fmt.Println(a)
-}
-  return "differ ends"
+	defer fmt.Println("this program runs at exit")
+	for i := 0; i < 5; i++ {
+		fmt.Println(a)
+	}
+	return "differ ends"
 }
 func main() {
-  fmt.Println(function1("hi"))
+	fmt.Println(function1("hi"))
 }
-// }
 
+// }
 
 // funtion which retruns a pointer
 

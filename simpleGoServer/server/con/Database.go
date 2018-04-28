@@ -2,8 +2,8 @@ package con
 
 import (
 	"gopkg.in/mgo.v2"
-	"os"
 	"log"
+	"os"
 )
 
 var Db *mgo.Database

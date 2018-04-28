@@ -14,6 +14,6 @@ func linearsearch(datalist []int, key int) bool {
 }
 
 func main() {
-	items := []int{95,78,46,58,45,86,99,251,320}
-	fmt.Println(linearsearch(items,58))
+	items := []int{95, 78, 46, 58, 45, 86, 99, 251, 320}
+	fmt.Println(linearsearch(items, 58))
 }

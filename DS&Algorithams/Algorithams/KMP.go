@@ -122,4 +122,3 @@ func main() {
 	fmt.Println(SearchNext("cocacola", "cx"))
 	fmt.Println(SearchNext("AABAACAADAABAABAAABAACAADAABAABA", "AABA"))
 }
-

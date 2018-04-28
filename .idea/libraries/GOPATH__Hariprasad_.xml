@@ -9,7 +9,6 @@
       <root url="file://$PROJECT_DIR$/../lingapos" />
       <root url="file://$PROJECT_DIR$/../.git" />
       <root url="file://$PROJECT_DIR$/../tests" />
-      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../reportServer" />
       <root url="file://$PROJECT_DIR$/../google.golang.org" />
       <root url="file://$PROJECT_DIR$/../messages" />
@@ -19,6 +18,8 @@
       <root url="file://$PROJECT_DIR$/../conf" />
       <root url="file://$PROJECT_DIR$/../inventory" />
       <root url="file://$PROJECT_DIR$/../pkg" />
+      <root url="file://$PROJECT_DIR$/../golearningbyYuvaraj" />
+      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../public" />
       <root url="file://$PROJECT_DIR$/../cloud.google.com" />
       <root url="file://$PROJECT_DIR$/../lingapos-copy" />
@@ -34,7 +35,6 @@
       <root url="file://$PROJECT_DIR$/../lingapos" />
       <root url="file://$PROJECT_DIR$/../.git" />
       <root url="file://$PROJECT_DIR$/../tests" />
-      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../reportServer" />
       <root url="file://$PROJECT_DIR$/../google.golang.org" />
       <root url="file://$PROJECT_DIR$/../messages" />
@@ -44,6 +44,8 @@
       <root url="file://$PROJECT_DIR$/../conf" />
       <root url="file://$PROJECT_DIR$/../inventory" />
       <root url="file://$PROJECT_DIR$/../pkg" />
+      <root url="file://$PROJECT_DIR$/../golearningbyYuvaraj" />
+      <root url="file://$PROJECT_DIR$/../zenpepper.com" />
       <root url="file://$PROJECT_DIR$/../public" />
       <root url="file://$PROJECT_DIR$/../cloud.google.com" />
       <root url="file://$PROJECT_DIR$/../lingapos-copy" />

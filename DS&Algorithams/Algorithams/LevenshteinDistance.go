@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func levenshtein(str1, str2 []rune) int {
@@ -39,16 +40,16 @@ func minimum(a, b, c int) int {
 	return c
 }
 
-func main(){
+func main() {
 	var str1 = []rune("Asheville")
 	var str2 = []rune("Arizona")
-	fmt.Println("Distance between Asheville and Arizona:",levenshtein(str1,str2))
+	fmt.Println("Distance between Asheville and Arizona:", levenshtein(str1, str2))
 
 	str1 = []rune("Python")
 	str2 = []rune("Peithen")
-	fmt.Println("Distance between Python and Peithen:",levenshtein(str1,str2))
+	fmt.Println("Distance between Python and Peithen:", levenshtein(str1, str2))
 
 	str1 = []rune("Orange")
 	str2 = []rune("Apple")
-	fmt.Println("Distance between Orange and Apple:",levenshtein(str1,str2))
+	fmt.Println("Distance between Orange and Apple:", levenshtein(str1, str2))
 }

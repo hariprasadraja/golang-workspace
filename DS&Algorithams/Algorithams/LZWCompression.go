@@ -1,6 +1,6 @@
 package main
-import "fmt"
 
+import "fmt"
 
 func compressLZW(testStr string) []int {
 	code := 256
@@ -27,7 +27,6 @@ func compressLZW(testStr string) []int {
 	}
 	return result
 }
-
 
 func decompressLZW(compressed []int) string {
 	code := 256

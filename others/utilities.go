@@ -18,11 +18,11 @@ func main() {
 	//
 	var alphanumRunes = []rune("abcdefghijklmnopqrstuvwxyz1234567890")
 
-	for _,id := range alphanumRunes{
+	for _, id := range alphanumRunes {
 		log.Println(id)
 		log.Println(len(alphanumRunes))
 		log.Println(rand.Intn(len(alphanumRunes)))
 	}
-      //rand.Seed(rand.Int63())
+	//rand.Seed(rand.Int63())
 
 }

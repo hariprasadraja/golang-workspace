@@ -7,15 +7,12 @@ import (
 
 func main() {
 
-	modifier := make(map[string] []map[string]interface{})
+	modifier := make(map[string][]map[string]interface{})
 
-	maps := map[string]interface{} {
-		"name":20,
+	maps := map[string]interface{}{
+		"name": 20,
 	}
 	modifier["data"][0] = maps
-
-
-
 
 	//something := []string{"coins", "notes", "gold?"}
 	//
@@ -34,4 +31,3 @@ func main() {
 	//log.Println(thisMap["coins"][0]["random"])
 
 }
-

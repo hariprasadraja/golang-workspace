@@ -30,9 +30,9 @@ func cubeLine(n, drawX, drawY int, cubeDraw string) {
 
 func main() {
 	fmt.Println("Enter 3 dimensions of Cuboid : ")
-	var l,b,h int
+	var l, b, h int
 	fmt.Scanln(&l)
 	fmt.Scanln(&b)
 	fmt.Scanln(&h)
-	cuboidDraw(l,b,h)
+	cuboidDraw(l, b, h)
 }

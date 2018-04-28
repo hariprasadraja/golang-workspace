@@ -18,8 +18,6 @@ func main() {
 		log.Println("Redis connection err:", err)
 	}
 
-	client.Set("name","Hariprasad",0)
+	client.Set("name", "Hariprasad", 0)
 
 }
-
-

@@ -1,15 +1,13 @@
 package main
 
 import (
-
 	"os"
 	"text/template"
 )
 
-
-type Header struct{
- Background string
- Color string
+type Header struct {
+	Background string
+	Color      string
 }
 
 type Inventory struct {
@@ -18,24 +16,21 @@ type Inventory struct {
 }
 
 func main() {
-                change := &Header{"white","black"}
-	        tmpl,err := template.New("template").ParseFiles("design.css")
-	           if err != nil {
-			  panic(err)
-		   }
+	change := &Header{"white", "black"}
+	tmpl, err := template.New("template").ParseFiles("design.css")
+	if err != nil {
+		panic(err)
+	}
 
-
-	 err = tmpl.ExecuteTemplate(w,"design.css",change)
-	       if err != nil{
-		       panic(err)
-	       }
+	err = tmpl.ExecuteTemplate(w, "design.css", change)
+	if err != nil {
+		panic(err)
+	}
 	//sweaters := Inventory{"wool", 17}
 	//tmpl, err := template.New("test").Parse("{{.Count}} items are made of {{.Material}}")
 	//if err != nil { panic(err) }
 	//err = tmpl.Execute(os.Stdout, sweaters)
 	//if err != nil { panic(err) }
-
-
 
 	//filePath := "design.css"
 	//

@@ -47,9 +47,8 @@ func main() {
 	}
 
 	noOfPerms := permutation(rangeSlice(0, num))
-	fmt.Println("Number of Permutation:",len(noOfPerms))
+	fmt.Println("Number of Permutation:", len(noOfPerms))
 	for i := 0; i < len(noOfPerms); i++ {
 		fmt.Println(noOfPerms[i])
 	}
 }
-

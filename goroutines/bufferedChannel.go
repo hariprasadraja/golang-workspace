@@ -2,25 +2,30 @@
 // channel to work on multiple tasks with a predefined number
 // of goroutines.
 package main
+
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"sync"
 	"time"
-	"log"
 )
+
 const (
-	numberGoroutines = 4 // Number of goroutines to use.
-	taskLoad = 10 // Amount of work to process.
+	numberGoroutines = 4  // Number of goroutines to use.
+	taskLoad         = 10 // Amount of work to process.
 )
+
 // wg is used to wait for the program to finish.
 var wg sync.WaitGroup
+
 // init is called to initialize the package by the
 // Go runtime prior to any other code being executed.
 func init() {
 	// Seed the random number generator.
 	rand.Seed(time.Now().Unix())
 }
+
 // main is the entry point for all Go programs.
 func main() {
 	// Create a buffered channel to manage the task load.
@@ -40,6 +45,7 @@ func main() {
 	// Wait for all the work to get done.
 	wg.Wait()
 }
+
 // worker is launched as a goroutine to process work from
 // the buffered channel.
 func worker(tasks chan string, worker int) {

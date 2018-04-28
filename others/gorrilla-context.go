@@ -1,10 +1,10 @@
 package main
 
 import (
-"fmt"
-"github.com/gorilla/context"
-"github.com/gorilla/mux"
-"net/http"
+	"fmt"
+	"github.com/gorilla/context"
+	"github.com/gorilla/mux"
+	"net/http"
 )
 
 type Key string
@@ -54,6 +54,3 @@ func main() {
 
 	http.ListenAndServe(":8080", mx)
 }
-
-
-

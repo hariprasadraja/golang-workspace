@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"log"
+	"os"
 )
 
 type Animal interface {
@@ -20,14 +20,14 @@ func (p Person) Say() string {
 
 func (p Person) Greet(animalToGreet Animal) {
 
-	fmt.Println("mychexck",animalToGreet)
+	fmt.Println("mychexck", animalToGreet)
 	fmt.Println("Hi!")
 }
 
 type Dog struct {
-	age int
+	age   int
 	breed string
-	owner *Person      // dog struct indirectley implements the Animal struct
+	owner *Person // dog struct indirectley implements the Animal struct
 }
 
 func (d Dog) Say() string {

@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.com/jung-kurt/gofpdf"
-	"github.com/golang/freetype"
-	"image"
-	"fmt"
 	"bytes"
+	"fmt"
+	"github.com/golang/freetype"
+	"github.com/jung-kurt/gofpdf"
+	"image"
+	"image/draw"
 	"image/jpeg"
 	"io/ioutil"
-	"image/draw"
 	"log"
 )
 

@@ -27,9 +27,9 @@ func generateSlice(size int) []int {
 
 func combsort(items []int) {
 	var (
-		n = len(items)
-		gap = len(items)
-		shrink = 1.3
+		n       = len(items)
+		gap     = len(items)
+		shrink  = 1.3
 		swapped = true
 	)
 
@@ -47,4 +47,3 @@ func combsort(items []int) {
 		}
 	}
 }
-

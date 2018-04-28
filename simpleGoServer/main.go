@@ -6,12 +6,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/julienschmidt/httprouter"
 	"context"
+	"github.com/julienschmidt/httprouter"
 	"simpleGoServer/server/con"
 	"simpleGoServer/server/controllers"
 )
-
 
 func init() {
 	con.DbConnection()

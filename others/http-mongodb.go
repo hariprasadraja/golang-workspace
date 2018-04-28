@@ -1,15 +1,15 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
-	"io/ioutil"
-	"encoding/json"
 )
 
 func CreateHandler(res http.ResponseWriter, req *http.Request) {
@@ -32,7 +32,7 @@ func CreateHandler(res http.ResponseWriter, req *http.Request) {
 }
 func RetriveHandler(res http.ResponseWriter, req *http.Request) {
 
-	book:= RetriveData()
+	book := RetriveData()
 	log.Println(book)
 }
 func UpdateHandler(res http.ResponseWriter, req *http.Request) {
@@ -74,7 +74,7 @@ func UpdateData(b string) {
 		os.Exit(3)
 	}
 
-	session.DB("http-mongodb").C("Notebook").Update(bson.M{"brandname":b}, bson.M{"$set": bson.M{"brandname": "content is updated"}})
+	session.DB("http-mongodb").C("Notebook").Update(bson.M{"brandname": b}, bson.M{"$set": bson.M{"brandname": "content is updated"}})
 	log.Println("Data is updated in the database")
 }
 
@@ -96,35 +96,35 @@ type Notebook struct {
 }
 
 func main() {
-	http.HandleFunc("/createjs/",JsonCreate)
-	http.HandleFunc("/viewjs/",JsonView)
-	http.HandleFunc("/updatejs/",JsonUpdate)
-	http.HandleFunc("/Deletejs/",JsonDelete)
+	http.HandleFunc("/createjs/", JsonCreate)
+	http.HandleFunc("/viewjs/", JsonView)
+	http.HandleFunc("/updatejs/", JsonUpdate)
+	http.HandleFunc("/Deletejs/", JsonDelete)
 
 	http.HandleFunc("/create/", CreateHandler)
 	http.HandleFunc("/view/", RetriveHandler)
 	http.HandleFunc("/update/", UpdateHandler)
 	http.HandleFunc("/Delete/", RemoveHandler)
 	http.ListenAndServe(":8080", nil)
-	}
+}
 
 func JsonCreate(res http.ResponseWriter, req *http.Request) {
 
-					data,err := ioutil.ReadAll(req.Body)
-					if err != nil {
-						os.Exit(5)
-					}
-					var p Notebook
-					json.Unmarshal(data,&p)
+	data, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		os.Exit(5)
+	}
+	var p Notebook
+	json.Unmarshal(data, &p)
 
-					fmt.Fprintln(res,p.Cost)
-          CreateData(&p)
-					log.Println("Completed JsonCreate")
+	fmt.Fprintln(res, p.Cost)
+	CreateData(&p)
+	log.Println("Completed JsonCreate")
 
 }
 func JsonView(res http.ResponseWriter, req *http.Request) {
-           data := RetriveData()
-					 log.Println(data)
-					fmt.Fprintf(res,"Json view")
-				 log.Println("Completed JsonView")
+	data := RetriveData()
+	log.Println(data)
+	fmt.Fprintf(res, "Json view")
+	log.Println("Completed JsonView")
 }

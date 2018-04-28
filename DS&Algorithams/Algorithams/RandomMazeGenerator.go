@@ -8,8 +8,8 @@ import (
 )
 
 type Maze struct {
-	c,h,v  []byte
-	cell,hor,ver [][]byte
+	c, h, v        []byte
+	cell, hor, ver [][]byte
 }
 
 func DrawMaze(rows, cols int) *Maze {
@@ -114,8 +114,7 @@ func (m *Maze) recursion(row, col int) {
 }
 
 func main() {
-	d := DrawMaze(5,7)
+	d := DrawMaze(5, 7)
 	d.generator()
 	fmt.Print(d)
 }
-

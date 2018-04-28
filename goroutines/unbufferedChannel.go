@@ -1,84 +1,84 @@
 //This sample program demonstrates how to use an unbuffered
 // channel to simulate a game of tennis between two goroutines.
 package main
+
 import (
-"fmt"
-"math/rand"
-"sync"
-"time"
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
 )
+
 // wg is used to wait for the program to finish.
 var wg sync.WaitGroup
+
 func init() {
-rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano())
 }
+
 // main is the entry point for all Go programs.
 func main() {
-// Create an unbuffered channel.
-court := make(chan int)
-// Add a count of two, one for each goroutine.
-wg.Add(2)
-// Launch two players.
-go player("Nadal", court)
-go player("Djokovic", court)
-// Start the set.
-court <- 1
-// Wait for the game to finish.
-wg.Wait()
-}
- // player simulates a person playing the game of tennis.
- func player(name string, court chan int) {
-
-// Schedule the call to Done to tell main we are done.
-
-defer wg.Done()
-
-
-for {
-
-// Wait for the ball to be hit back to us.
-
-ball, ok := <-court
-
-if !ok {
-
-// If the channel was closed we won.
-
-fmt.Printf("Player %s Won\n", name)
-
-return
-
+	// Create an unbuffered channel.
+	court := make(chan int)
+	// Add a count of two, one for each goroutine.
+	wg.Add(2)
+	// Launch two players.
+	go player("Nadal", court)
+	go player("Djokovic", court)
+	// Start the set.
+	court <- 1
+	// Wait for the game to finish.
+	wg.Wait()
 }
 
+// player simulates a person playing the game of tennis.
+func player(name string, court chan int) {
 
-// Pick a random number and see if we miss the ball.
+	// Schedule the call to Done to tell main we are done.
 
-n := rand.Intn(100)
+	defer wg.Done()
 
-if n%13 == 0 {
+	for {
 
-fmt.Printf("Player %s Missed\n", name)
+		// Wait for the ball to be hit back to us.
 
+		ball, ok := <-court
 
-// Close the channel to signal we lost.
+		if !ok {
 
-close(court)
+			// If the channel was closed we won.
 
-return
+			fmt.Printf("Player %s Won\n", name)
 
-}
+			return
 
+		}
 
-// Display and then increment the hit count by one.
+		// Pick a random number and see if we miss the ball.
 
-fmt.Printf("Player %s Hit %d\n", name, ball)
+		n := rand.Intn(100)
 
-ball++
+		if n%13 == 0 {
 
+			fmt.Printf("Player %s Missed\n", name)
 
-// Hit the ball back to the opposing player.
+			// Close the channel to signal we lost.
 
-court <- ball
+			close(court)
 
-}
+			return
+
+		}
+
+		// Display and then increment the hit count by one.
+
+		fmt.Printf("Player %s Hit %d\n", name, ball)
+
+		ball++
+
+		// Hit the ball back to the opposing player.
+
+		court <- ball
+
+	}
 }

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"github.com/signintech/gopdf"
+	"log"
 )
 
 func main() {

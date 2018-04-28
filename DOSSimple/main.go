@@ -39,10 +39,10 @@ func main() {
 
 	var wg sync.WaitGroup
 	wg.Add(maxProcess)
-	for i :=0; i < maxProcess ; i ++ {
+	for i := 0; i < maxProcess; i++ {
 		process := "PROCS[" + strconv.Itoa(i) + "]"
 		go attackService(attackUrl, process)
-		log.Print("check",i)
+		log.Print("check", i)
 	}
 
 	wg.Wait()

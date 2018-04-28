@@ -7,10 +7,10 @@ import (
 	"errors"
 	"fmt"
 	"gopkg.in/mgo.v2/bson"
+	"log"
 	"net/http"
 	"regexp"
 	"strings"
-	"log"
 )
 
 // keyOperations is to perform operations on designated key from QueryParamsFilters
@@ -33,7 +33,7 @@ func formValidPair(allowedKeys map[string]keyOperations, key string, val string)
 	key, val = strings.TrimSpace(key), strings.TrimSpace(val)
 	allowedKey, ok := allowedKeys[key]
 	if !ok {
-		return allowedKey.DBPath,val, fmt.Errorf("key %s is not allowed", key)
+		return allowedKey.DBPath, val, fmt.Errorf("key %s is not allowed", key)
 	}
 
 	valid := true
@@ -77,7 +77,7 @@ func makeOptionalQuery(filterParams string, allowedKeys map[string]keyOperations
 	return nil
 }
 
-func makeMandatoryQuery(filterParams string, allowedKeys map[string]keyOperations, query bson.M) (error) {
+func makeMandatoryQuery(filterParams string, allowedKeys map[string]keyOperations, query bson.M) error {
 	pairs := strings.Split(filterParams, ",")
 	for _, pair := range pairs {
 		val := strings.Split(pair, ":")
@@ -121,7 +121,7 @@ func ParseRequestForFilterByParams(r *http.Request, allowedKeys map[string]keyOp
 			return query, err
 		}
 
-		log.Print("Optional Query: ",query)
+		log.Print("Optional Query: ", query)
 	}
 
 	// ******  Mandatory Filters ******
@@ -139,7 +139,7 @@ func ParseRequestForFilterByParams(r *http.Request, allowedKeys map[string]keyOp
 			return query, err
 		}
 
-		log.Print("mandatory Query: ",query)
+		log.Print("mandatory Query: ", query)
 	}
 
 	if filterBy != "" && optionalData == "" && mandatoryData == "" {

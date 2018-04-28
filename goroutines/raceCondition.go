@@ -1,17 +1,20 @@
 // This sample program demonstrates how to create race
 // conditions in our programs. We don't want to do this.
 package main
+
 import (
 	"fmt"
 	"runtime"
 	"sync"
 )
+
 var (
 	// counter is a variable incremented by all goroutines.
 	counter int
 	// wg is used to wait for the program to finish.
-wg sync.WaitGroup
+	wg sync.WaitGroup
 )
+
 // main is the entry point for all Go programs.
 func main() {
 	// Add a count of two, one for each goroutine.
@@ -23,6 +26,7 @@ func main() {
 	wg.Wait()
 	fmt.Println("Final Counter:", counter)
 }
+
 // incCounter increments the package level counter variable.
 func incCounter(id int) {
 	// Schedule the call to Done to tell main we are done.

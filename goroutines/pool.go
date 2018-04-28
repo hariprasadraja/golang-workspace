@@ -1,24 +1,28 @@
 // This sample program demonstrates how to use the pool package
 // to share a simulated set of database connections.
 package main
+
 import (
-	"log"
+	pool "Hariprasad/Pool"
 	"io"
+	"log"
 	"math/rand"
 	"sync"
 	"sync/atomic"
 	"time"
-	 pool "Hariprasad/Pool"
 	//"reflect"
 )
+
 const (
-	maxGoroutines = 5 // the number of routines to use.
-    pooledResources = 2 // number of resources in the pool
+	maxGoroutines   = 5 // the number of routines to use.
+	pooledResources = 2 // number of resources in the pool
 )
+
 // dbConnection simulates a resource to share.
 type dbConnection struct {
 	ID int32
 }
+
 // Close implements the io.Closer interface so dbConnection
 // can be managed by the pool. Close performs any resource
 // release management.
@@ -26,8 +30,10 @@ func (dbConn *dbConnection) Close() error {
 	log.Println("Close: Connection", dbConn.ID)
 	return nil
 }
+
 // idCounter provides support for giving each connection a unique id.
 var idCounter int32
+
 // createConnection is a factory method that will be called by
 // the pool when a new connection is needed.
 func createConnection() (io.Closer, error) {
@@ -35,6 +41,7 @@ func createConnection() (io.Closer, error) {
 	log.Println("Create: New Connection", id)
 	return &dbConnection{id}, nil
 }
+
 // main is the entry point for all Go programs.
 func main() {
 	var wg sync.WaitGroup
@@ -61,11 +68,12 @@ func main() {
 	log.Println("Shutdown Program.")
 	p.Close()
 }
+
 // performQueries tests the resource pool of connections.
 func performQueries(query int, p *pool.Pool) {
 	// Acquire a connection from the pool.
 	conn, err := p.Acquire()
-	log.Println("conn" ,conn)
+	log.Println("conn", conn)
 	if err != nil {
 		log.Println(err)
 		return

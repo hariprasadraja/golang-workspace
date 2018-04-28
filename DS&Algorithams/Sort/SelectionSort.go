@@ -37,4 +37,3 @@ func selectionsort(items []int) {
 		items[i], items[minIdx] = items[minIdx], items[i]
 	}
 }
-

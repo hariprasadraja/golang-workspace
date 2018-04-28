@@ -1,7 +1,7 @@
 package main
 
 import (
-"fmt"
+	"fmt"
 	"log"
 )
 
@@ -21,24 +21,23 @@ func (f Field) ID() string {
 // uses slice of ider
 func inSlice(idSlice []ider, s string) bool {
 	log.Println(idSlice)
-     x := idSlice[0].ID()
-	 if x == s {
-		 return true
-	 }
+	x := idSlice[0].ID()
+	if x == s {
+		return true
+	}
 
 	//for _, v := range idSlice {
 	//	if s == v.ID() {
 	//		return true
 	//	}
 
-
 	return false
 }
 
 func main() {
-	 var data = make([]ider,5)
-       //var fields = Field{"Field1"}
-       //data = []ider(fields)
+	var data = make([]ider, 5)
+	//var fields = Field{"Field1"}
+	//data = []ider(fields)
 
 	fmt.Println(inSlice(data, "Field1"))
 }
