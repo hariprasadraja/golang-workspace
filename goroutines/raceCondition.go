@@ -4,7 +4,7 @@ package main
 
 import (
 	"fmt"
-	"runtime"
+	"log"
 	"sync"
 )
 
@@ -17,11 +17,14 @@ var (
 
 // main is the entry point for all Go programs.
 func main() {
+
 	// Add a count of two, one for each goroutine.
 	wg.Add(2)
+
 	// Create two goroutines.
 	go incCounter(1)
 	go incCounter(2)
+
 	// Wait for the goroutines to finish.
 	wg.Wait()
 	fmt.Println("Final Counter:", counter)
@@ -31,11 +34,15 @@ func main() {
 func incCounter(id int) {
 	// Schedule the call to Done to tell main we are done.
 	defer wg.Done()
-	for count := 0; count < 2; count++ {
+	for count := 0; count < 1; count++ {
+
 		// Capture the value of Counter.
 		value := counter
+
 		// Yield the thread and be placed back in queue.
-		runtime.Gosched()
+		log.Println("before scheduling.. by Routine: ", id)
+		// runtime.Gosched()
+		log.Println("After scheduling... by Routine: ", id)
 		// Increment our local value of Counter.
 		value++
 		// Store the value back into Counter.

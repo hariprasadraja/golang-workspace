@@ -14,6 +14,8 @@ func main() {
 		log.Println("string can't be parsed")
 	}
 
+	a = Reverse(a)
+	log.Printf("reversed string", a)
 }
 
 func Reverse(s string) string {

@@ -13,12 +13,11 @@ var cb *gobreaker.CircuitBreaker
 func init() {
 	var st gobreaker.Settings
 	st.Name = "HTTP GET"
-	//st.ReadyToTrip = func(counts gobreaker.Counts) bool {
-	//	failureRatio := float64(counts.TotalFailures) / float64(counts.Requests)
-	//	return counts.Requests >= 3 && failureRatio >= 0.6
-	//}
+	st.ReadyToTrip = func(counts gobreaker.Counts) bool {
+		failureRatio := float64(counts.TotalFailures) / float64(counts.Requests)
+		return counts.Requests >= 3 && failureRatio >= 0.6
+	}
 
-	
 	st.OnStateChange = func(name string, from gobreaker.State, to gobreaker.State) {
 		log.Printf("Name: %#+v", name)
 		log.Printf("From: %#+v", from)
@@ -29,7 +28,7 @@ func init() {
 
 // Get wraps http.Get in CircuitBreaker.
 func Get(url string) ([]byte, error) {
-	var i  = 0
+	var i = 0
 	body, err := cb.Execute(func() (interface{}, error) {
 		log.Printf("count: %#+v", i)
 		i = i + 1
@@ -55,9 +54,8 @@ func Get(url string) ([]byte, error) {
 
 func main() {
 
-	for{
+	for {
 		Get("http://192.168.2.12:8085")
 	}
-
 
 }

@@ -1,9 +1,10 @@
+// Errors package Stack Trace usages...
 package Errors
 
 import (
 	"fmt"
-	"github.com/pkg/errors"
 	"log"
+	"github.com/pkg/errors"
 )
 
 // printErrStack prints the needed stack trace for the errors created via db operations.

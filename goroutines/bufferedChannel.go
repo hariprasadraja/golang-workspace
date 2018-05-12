@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	numberGoroutines = 4  // Number of goroutines to use.
+	numberGoroutines = 20  // Number of goroutines to use.
 	taskLoad         = 10 // Amount of work to process.
 )
 
@@ -36,21 +36,27 @@ func main() {
 		go worker(tasks, gr)
 	}
 	// Add a bunch of work to get done.
+
+	startTime := time.Now()
 	for post := 1; post <= taskLoad; post++ {
+		log.Printf("task: %+v", post)
 		tasks <- fmt.Sprintf("Task : %d", post)
 	}
 	// Close the channel so the goroutines will quit
 	// when all the work is done.
 	close(tasks)
 	// Wait for all the work to get done.
-	wg.Wait()
+	wg.Wait() 
+	endTime := time.Now() 
+	  
+	log.Printf("time taken: %+v", endTime.Sub(startTime))
 }
 
 // worker is launched as a goroutine to process work from
 // the buffered channel.
 func worker(tasks chan string, worker int) {
 	// Report that we just returned.
-	log.Println()
+	fmt.Printf("Worker: %d : Started \n", worker)
 	defer wg.Done()
 	for {
 		// Wait for work to be assigned.

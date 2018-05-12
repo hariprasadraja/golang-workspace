@@ -7,9 +7,7 @@ import (
 	"sync"
 )
 
-// Example provided with help from Fatih Arslan and Gabriel Aszalos.
 // Package pool manages a user defined set of resources.
-
 // Pool manages a set of resources that can be shared safely by
 // multiple goroutines. The resource being managed must implement
 // the io.Closer interface.
