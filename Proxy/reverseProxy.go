@@ -19,6 +19,7 @@ func panicRecovery() {
 	}
 }
 
+// RedirectToSubDomine redirects the request to sudomine server
 func RedirectToSubDomine(w http.ResponseWriter, r *http.Request) {
 	defer panicRecovery()
 
@@ -28,28 +29,9 @@ func RedirectToSubDomine(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// canonical name of the Domine.
-	redirectUrl := "http:localhost:8080"
-	targetUrl := &url.URL{Scheme: "http", Host: redirectUrl}
-	proxy := httputil.NewSingleHostReverseProxy(targetUrl)
-	proxy.ServeHTTP(customWriter{w}, r)
-}
-
-type customWriter struct {
-	http.ResponseWriter
-}
-
-func (w customWriter) WriteHeader(c int) {
-	if c == http.StatusBadGateway {
-		http.Error(w.ResponseWriter, "Server under maintenance", c)
-		return
-	}
-
-	w.ResponseWriter.WriteHeader(c)
-}
-
-func (w customWriter) Write(b []byte) (int, error) {
-	return w.ResponseWriter.Write(b)
+	targetURL := &url.URL{Scheme: "http", Host: "http:localhost:8080"} //cannonical name
+	proxy := httputil.NewSingleHostReverseProxy(targetURL)
+	proxy.ServeHTTP(w, r)
 }
 
 func redirectToSSLServer(w http.ResponseWriter, r *http.Request) {
@@ -66,37 +48,12 @@ func redirectToSSLServer(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
-	go func() {
-		sslmux := http.NewServeMux()
-		sslmux.HandleFunc("/", RedirectToSubDomine)
-
-		crtFile := ""
-		keyFile := ""
-
-		tlsconf := &tls.Config{ServerName: ""}
-		sslServer := http.Server{
-			Addr:         ":443",
-			ReadTimeout:  90 * time.Second,
-			WriteTimeout: 90 * time.Second,
-			Handler:      sslmux,
-			TLSConfig:    tlsconf,
-		}
-
-		log.Print("Listening on: 443")
-		err := sslServer.ListenAndServeTLS(crtFile, keyFile)
-		if err != nil {
-			log.Printf("Error in running ssl proxy server: %s", err.Error())
-		}
-	}()
-
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", redirectToSSLServer)
-
 	server := http.Server{
-		Addr:         ":90",
-		ReadTimeout:  90 * time.Second,
-		WriteTimeout: 90 * time.Second,
+		Addr:         ":9000",
+		ReadTimeout:  200 * time.Second,
+		WriteTimeout: 200 * time.Second,
 		Handler:      mux,
 	}
 
@@ -107,5 +64,26 @@ func main() {
 
 	defer server.Close()
 	log.Printf("listerning on port : %s", server.Addr)
+	go runSSlServer()
+}
 
+func runSSlServer() {
+	sslmux := http.NewServeMux()
+	sslmux.HandleFunc("/", RedirectToSubDomine)
+	crtFile := ""
+	keyFile := ""
+	tlsconf := &tls.Config{ServerName: ""}
+	sslServer := http.Server{
+		Addr:         ":443",
+		ReadTimeout:  200 * time.Second,
+		WriteTimeout: 200 * time.Second,
+		Handler:      sslmux,
+		TLSConfig:    tlsconf,
+	}
+
+	log.Print("Listening on: 443")
+	err := sslServer.ListenAndServeTLS(crtFile, keyFile)
+	if err != nil {
+		log.Printf("Error in running ssl proxy server: %s", err.Error())
+	}
 }
