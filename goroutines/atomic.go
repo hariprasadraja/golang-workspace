@@ -33,7 +33,7 @@ func main() {
 	wg.Wait()
 }
 
-// doWork simulates a goroutine performing work and
+// doWork simulates a goroutine performing workP and
 // checking the Shutdown flag to terminate early.
 func doWork(name string) {
 	// Schedule the call to Done to tell main we are done.

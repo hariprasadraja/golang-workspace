@@ -9,22 +9,17 @@ import (
 var data = []string{"Reason", "Request", "Error"}
 
 func main() {
-
 	file, err := os.Create("result.csv")
-	checkError("Cannot create file", err)
 	defer file.Close()
+	if err != nil {
+		log.Fatal("Failed to create csv file, Error: ", err.Error())
+	}
 
 	writer := csv.NewWriter(file)
 	defer writer.Flush()
 
-	//for _, value := range data {
 	err = writer.Write(data)
-	checkError("Cannot write to file", err)
-	//}
-}
-
-func checkError(message string, err error) {
 	if err != nil {
-		log.Fatal(message, err)
+		log.Fatal("Failed to write into the file, Error: ", err.Error())
 	}
 }

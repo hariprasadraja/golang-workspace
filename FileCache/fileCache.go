@@ -1,9 +1,9 @@
+// file system cache implementation in Golang
 package main
 
 import (
 	"encoding/json"
 	"errors"
-	"gopkg.in/mgo.v2/bson"
 	"io"
 	"log"
 	"os"
@@ -122,21 +122,12 @@ func clean(key string) {
 }
 
 type Key struct {
-	Account    bson.ObjectId
-	Store      bson.ObjectId
 	Collection string
-	Id         bson.ObjectId
-	Suffix     string
+	Id         string
 }
 
 // Stringify the Key
 func (k *Key) String() string {
-	data := "_" + string(k.Store.Hex()) + "_" + string(k.Account.Hex())
-	if k.Suffix != "" {
-		data = data + "_" + k.Suffix
-		return data
-	}
-
 	data = k.Collection + "_" + k.Id.Hex() + data
 	return data
 }
@@ -146,36 +137,21 @@ func (k *Key) validate() error {
 }
 
 func main() {
-
 	var customer = map[string]interface{}{
 		"name":            "customer 1",
 		"firstName":       "",
 		"lastName":        "",
 		"gender":          "",
-		"phoneNumber":     "8098994302",
-		"emailId":         "test@test.com",
 		"imageAvailable":  false,
 		"imageVersion":    0,
-		"gateCode":        "",
-		"loyaltyPoints":   0,
-		"account":         bson.ObjectIdHex("5936895978362e42ac5e02ce"),
-		"activeStatus":    true,
-		"customerAddress": []string{},
-		"dateCreated":     time.Now(),
-		"lastUpdated":     time.Now(),
-		"customerId":      "",
-		"cardDetails":     []string{},
-		"taxExempt":       false,
-		"notes":           "",
-		"stores":          []bson.ObjectId{bson.ObjectIdHex("5936895978362e42ac5e02cc")},
+		"gateCode":        ""
 	}
 
 	key := Key{
 		Collection: "customer", // Set DB collection name
-		Id:         bson.ObjectIdHex("5936895978362e42ac5e02ca"),
-		Store:      bson.ObjectIdHex("5936895978362e42ac5e02cc"),
-		Account:    bson.ObjectIdHex("1234895978362e42ac5e02ce"),
+		Id:         "5936895978362e42ac5e02ca",
 	}
+
 	err := Set(&key, &customer)
 	if err != nil {
 		log.Print("error:", err)

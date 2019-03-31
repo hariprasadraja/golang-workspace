@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/net/websocket"
 	"log"
 	"net/http"
+
+	"golang.org/x/net/websocket"
 )
 
 func Echo(ws *websocket.Conn) {
@@ -12,14 +13,12 @@ func Echo(ws *websocket.Conn) {
 
 	for {
 		var reply string
-
 		if err = websocket.Message.Receive(ws, &reply); err != nil {
 			fmt.Println("Can't receive")
 			break
 		}
 
 		fmt.Println("Received back from client: " + reply)
-
 		msg := "Received:  " + reply
 		fmt.Println("Sending to client: " + msg)
 
@@ -31,9 +30,7 @@ func Echo(ws *websocket.Conn) {
 }
 
 func main() {
-
 	if err := http.ListenAndServe(":1234", websocket.Handler(Echo)); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
-
 }
