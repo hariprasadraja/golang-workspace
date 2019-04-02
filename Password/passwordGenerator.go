@@ -18,6 +18,6 @@ func SHAEncode(target string) (output string) {
 }
 
 func main() {
-	res := SHAEncode("callcenter123")
+	res := SHAEncode("this is your new password")
 	log.Println(res)
 }

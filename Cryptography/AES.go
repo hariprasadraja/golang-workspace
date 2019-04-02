@@ -15,7 +15,6 @@ import (
 )
 
 func addBase64Padding(value string) string {
-
 	m := len(value) % 4
 	if m != 0 {
 		value += strings.Repeat("=", 4-m)
