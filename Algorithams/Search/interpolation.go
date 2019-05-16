@@ -1,53 +1,66 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func interpolationSearch(array []int, key int) int {
+/*
+InterpolationSearch searches for the entity in the given sortedData.
+if the entity is present, it will return the index of the entity, if not -1 will be returned.
+see: https://en.wikipedia.org/wiki/Interpolation_search
+Complexity
+	Worst: O(N)
+	Average: O(log(log(N))  if the elements are uniformly distributed
+	Best: O(1)
 
-	min, max := array[0], array[len(array)-1]
+Example
+		fmt.Println(InterpolationSearch(100, []int{1, 2, 9, 20, 31, 45, 63, 70, 100}))
+*/
+func InterpolationSearch(entity int, sortedData []int) int {
+	var (
+		minIndex = 0
+		minVal   = sortedData[minIndex]
 
-	low, high := 0, len(array)-1
+		maxIndex = len(sortedData) - 1
+		maxVal   = sortedData[maxIndex]
+	)
 
 	for {
-		if key < min {
-			return low
-		}
-
-		if key > max {
-			return high + 1
+		if entity < minVal || entity > maxVal {
+			return -1
 		}
 
 		// make a guess of the location
 		var guess int
-		if high == low {
-			guess = high
+		if maxIndex == minIndex {
+			guess = maxIndex
 		} else {
-			size := high - low
-			offset := int(float64(size-1) * (float64(key-min) / float64(max-min)))
-			guess = low + offset
+			size := maxIndex - minIndex
+			offset := int(float64(size-1) * (float64(entity-minVal) / float64(maxVal-minVal)))
+			guess = minIndex + offset
 		}
 
 		// maybe we found it?
-		if array[guess] == key {
+		if sortedData[guess] == entity {
 			// scan backwards for start of value range
-			for guess > 0 && array[guess-1] == key {
+			for guess > 0 && sortedData[guess-1] == entity {
 				guess--
 			}
 			return guess
 		}
 
 		// if we guessed to high, guess lower or vice versa
-		if array[guess] > key {
-			high = guess - 1
-			max = array[high]
+		if sortedData[guess] > entity {
+			maxIndex = guess - 1
+			maxVal = sortedData[maxIndex]
 		} else {
-			low = guess + 1
-			min = array[low]
+			minIndex = guess + 1
+			minVal = sortedData[minIndex]
 		}
 	}
 }
 
 func main() {
 	items := []int{1, 2, 9, 20, 31, 45, 63, 70, 100}
-	fmt.Println(interpolationSearch(items, 63))
+	fmt.Println(InterpolationSearch(100, items))
 }

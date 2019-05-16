@@ -14,33 +14,51 @@ func main() {
 	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
 }
 
-// Generates a slice of size, size filled with random numbers
-func generateSlice(size int) []int {
-
+// GeneratesSlice generates a slice of size filled with random numbers
+func GenerateSlice(size int) []int {
 	slice := make([]int, size, size)
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < size; i++ {
-		slice[i] = rand.Intn(999) - rand.Intn(999)
+		// Random data goes here...
+		// Example
+		// 		slice[i] = rand.Intn(999) - rand.Intn(999)
+
 	}
+
 	return slice
 }
 
-func bubblesort(items []int) {
+/*
+BubbleSort sorts the given unSortedData into the sorted data. If the data is already sorted
+then it will return as it is without modification.
+Complexity
+	Worst complexity: O(n^2)
+	Average complexity: O(n^2)
+	Best complexity: O(n)
+	Space complexity: O(1)
+*/
+func BubbleSort(unSortedData []int) (sortedData []int) {
 	var (
-		n      = len(items)
+		n      = len(unSortedData)
 		sorted = false
 	)
+
 	for !sorted {
 		swapped := false
 		for i := 0; i < n-1; i++ {
-			if items[i] > items[i+1] {
-				items[i+1], items[i] = items[i], items[i+1]
+			if unSortedData[i] > unSortedData[i+1] {
+				unSortedData[i+1], unSortedData[i] = unSortedData[i], unSortedData[i+1]
 				swapped = true
 			}
 		}
+
+		// if no swapping occurs, then the array is already sorted
 		if !swapped {
 			sorted = true
 		}
+
 		n = n - 1
 	}
+
+	return unSortedData
 }

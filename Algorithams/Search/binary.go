@@ -2,29 +2,45 @@ package main
 
 import "fmt"
 
-func binarySearch(needle int, haystack []int) bool {
+/*
+BinarySearch (a.k.a. half-interval search/ logarithmic search / binary chop)
+searches for an entity which is present in the given data (sorted data).
+If the entity is present, it will retrun true along with it's index otherwise false and
+the index will be zero
+Complexity
+		Worst: O(log n)
+		Average: O(log n)
+		Best: O(1)
+		Space: O(1)
+*/
+func BinarySearch(entity int, sortedData []int) (bool, int) {
+	var (
+		minIndex = 0
+		maxIndex = len(sortedData) - 1
+	)
 
-	low := 0
-	high := len(haystack) - 1
+	for minIndex <= maxIndex {
+		median := (minIndex + maxIndex) / 2
+		if sortedData[median] < entity {
 
-	for low <= high {
-		median := (low + high) / 2
-
-		if haystack[median] < needle {
-			low = median + 1
+			// if entity is greater than the median, then neglect the data lesser than the median
+			minIndex = median + 1
 		} else {
-			high = median - 1
+
+			// if entity is lesser than the median, then neglect the data greater than the median
+			maxIndex = median - 1
 		}
 	}
 
-	if low == len(haystack) || haystack[low] != needle {
-		return false
+	// if last index reached || value does not match with entity
+	if minIndex == len(sortedData) || sortedData[minIndex] != entity {
+		return false, 0
 	}
 
-	return true
+	return true, minIndex
 }
 
 func main() {
 	items := []int{1, 2, 9, 20, 31, 45, 63, 70, 100}
-	fmt.Println(binarySearch(63, items))
+	fmt.Println(BinarySearch(63, items))
 }
