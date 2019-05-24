@@ -12,13 +12,17 @@ import (
 // Runner runs a set of tasks within a given timeout and can be
 // shut down on an operating system interrupt.
 type Runner struct {
+
 	// interrupt channel reports a signal from the
 	// operating system.
 	interrupt chan os.Signal
+
 	// complete channel reports that processing is done.
 	complete chan error
+
 	// timeout reports that time has run out.
 	timeout <-chan time.Time
+
 	// tasks holds a set of functions that are executed
 	// synchronously in index order.
 	tasks []func(int)
@@ -47,17 +51,22 @@ func (r *Runner) Add(tasks ...func(int)) {
 
 // Start runs all tasks and monitors channel events.
 func (r *Runner) Start() error {
+
 	// We want to receive all interrupt based signals.
 	signal.Notify(r.interrupt, os.Interrupt)
+
 	// Run the different tasks on a different goroutine.
 	go func() {
 		r.complete <- r.run()
 	}()
+
 	select {
+
 	// Signaled when processing is done.
 	case err := <-r.complete:
 		return err
-	// Signaled when we run out of time.
+
+		// Signaled when we run out of time.
 	case <-r.timeout:
 		return ErrTimeout
 	}
@@ -66,10 +75,12 @@ func (r *Runner) Start() error {
 // run executes each registered task.
 func (r *Runner) run() error {
 	for id, task := range r.tasks {
+
 		// Check for an interrupt signal from the OS.
 		if r.gotInterrupt() {
 			return ErrInterrupt
 		}
+
 		// Execute the registered task.
 		go task(id)
 	}
@@ -80,10 +91,13 @@ func (r *Runner) run() error {
 func (r *Runner) gotInterrupt() bool {
 	select {
 	// Signaled when an interrupt event is sent.
+
 	case <-r.interrupt:
+
 		// Stop receiving any further signals.
 		signal.Stop(r.interrupt)
 		return true
+
 	// Continue running as normal.
 	default:
 		return false
