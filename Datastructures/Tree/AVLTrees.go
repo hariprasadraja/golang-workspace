@@ -10,59 +10,65 @@ type Key interface {
 	Eq(Key) bool
 }
 
-
 type Node struct {
 	Data    Key
 	Balance int
 	Link    [2]*Node
 }
 
+func (node *Node) String() {
+	avl, err := json.MarshalIndent(node, "", "   ")
+	if err != nil {
+		fmt.Println("Unable to print the tree \n Error: %s", err)
+	}
+
+	fmt.Println(string(avl))
+}
+
+func (node *Node) singleRotation(dir int) {
+	save := node.Link[opp(dir)]
+	node.Link[opp(dir)] = save.Link[dir]
+	save.Link[dir] = node
+	node = save
+}
+
+func (node *Node) doubleRotation(dir int) {
+	save := node.Link[opp(dir)].Link[dir]
+
+	node.Link[opp(dir)].Link[dir] = save.Link[opp(dir)]
+	save.Link[opp(dir)] = node.Link[opp(dir)]
+	node.Link[opp(dir)] = save
+
+	save = node.Link[opp(dir)]
+	node.Link[opp(dir)] = save.Link[dir]
+	save.Link[dir] = node
+	node = save
+}
 
 func opp(dir int) int {
 	return 1 - dir
 }
 
-// single rotation
-func single(root *Node, dir int) *Node {
-	save := root.Link[opp(dir)]
-	root.Link[opp(dir)] = save.Link[dir]
-	save.Link[dir] = root
-	return save
-}
-
-// double rotation
-func double(root *Node, dir int) *Node {
-	save := root.Link[opp(dir)].Link[dir]
-
-	root.Link[opp(dir)].Link[dir] = save.Link[opp(dir)]
-	save.Link[opp(dir)] = root.Link[opp(dir)]
-	root.Link[opp(dir)] = save
-
-	save = root.Link[opp(dir)]
-	root.Link[opp(dir)] = save.Link[dir]
-	save.Link[dir] = root
-	return save
-}
-
 // adjust valance factors after double rotation
-func adjustBalance(root *Node, dir, bal int) {
-	n := root.Link[dir]
+func (node *Node) adjustBalance(dir, bal int) {
+	n := node.Link[dir]
 	nn := n.Link[opp(dir)]
 	switch nn.Balance {
 	case 0:
-		root.Balance = 0
+		node.Balance = 0
 		n.Balance = 0
 	case bal:
-		root.Balance = -bal
+		node.Balance = -bal
 		n.Balance = 0
 	default:
-		root.Balance = 0
+		node.Balance = 0
 		n.Balance = bal
 	}
+
 	nn.Balance = 0
 }
 
-func insertBalance(root *Node, dir int) *Node {
+func (node *Node) insertBalance(root *Node, dir int) *Node {
 	n := root.Link[dir]
 	bal := 2*dir - 1
 	if n.Balance == bal {
@@ -70,8 +76,9 @@ func insertBalance(root *Node, dir int) *Node {
 		n.Balance = 0
 		return single(root, opp(dir))
 	}
-	adjustBalance(root, dir, bal)
-	return double(root, opp(dir))
+
+	node.adjustBalance(dir, bal)
+	node.doubleRotation(opp(dir))
 }
 
 func insertR(root *Node, data Key) (*Node, bool) {
@@ -161,16 +168,14 @@ func removeR(root *Node, data Key) (*Node, bool) {
 	return removeBalance(root, dir)
 }
 
-
 type intKey int
+
 func (k intKey) Less(k2 Key) bool { return k < k2.(intKey) }
 func (k intKey) Eq(k2 Key) bool   { return k == k2.(intKey) }
 
 func main() {
 	var tree *Node
 	fmt.Println("Empty Tree:")
-	avl,_ := json.MarshalIndent(tree, "", "   ")
-	fmt.Println(string(avl))
 
 	fmt.Println("\nInsert Tree:")
 	Insert(&tree, intKey(4))
@@ -179,12 +184,12 @@ func main() {
 	Insert(&tree, intKey(6))
 	Insert(&tree, intKey(6))
 	Insert(&tree, intKey(9))
-	avl,_ = json.MarshalIndent(tree, "", "   ")
+	avl, _ = json.MarshalIndent(tree, "", "   ")
 	fmt.Println(string(avl))
 
 	fmt.Println("\nRemove Tree:")
 	Remove(&tree, intKey(4))
 	Remove(&tree, intKey(6))
-	avl,_ = json.MarshalIndent(tree, "", "   ")
+	avl, _ = json.MarshalIndent(tree, "", "   ")
 	fmt.Println(string(avl))
 }

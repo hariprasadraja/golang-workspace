@@ -11,22 +11,16 @@ import (
 var (
 	// counter is a variable incremented by all goroutines.
 	counter int
-	// wg is used to wait for the program to finish.
-	wg sync.WaitGroup
+	wg      sync.WaitGroup
 )
 
 // main is the entry point for all Go programs.
+// Run: go run --race main.go
 func main() {
-
-	// Add a count of two, one for each goroutine.
-	wg.Add(2)
 
 	// Create two goroutines.
 	go incCounter(1)
 	go incCounter(2)
-
-	// Wait for the goroutines to finish.
-	wg.Wait()
 	fmt.Println("Final Counter:", counter)
 }
 

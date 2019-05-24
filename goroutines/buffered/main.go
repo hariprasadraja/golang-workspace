@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
-	"sync"
 	"time"
 )
 
@@ -16,8 +15,6 @@ const (
 	taskLoad         = 10 // Amount of work to process.
 )
 
-// wg is used to wait for the program to finish.
-var wg sync.WaitGroup
 
 // init is called to initialize the package by the
 // Go runtime prior to any other code being executed.
@@ -46,9 +43,9 @@ func main() {
 	// when all the work is done.
 	close(tasks)
 	// Wait for all the work to get done.
-	wg.Wait() 
-	endTime := time.Now() 
-	  
+	wg.Wait()
+	endTime := time.Now()
+
 	log.Printf("time taken: %+v", endTime.Sub(startTime))
 }
 
