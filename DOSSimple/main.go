@@ -14,7 +14,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"runtime"
 	"strconv"
 	"sync"
 )
@@ -32,10 +31,6 @@ func main() {
 	attackUrl := "http://localhost:8080/"
 
 	maxProcess := 0
-	if nCPU := runtime.NumCPU(); nCPU > 1 {
-		maxProcess = runtime.GOMAXPROCS(nCPU)
-		log.Println("INFO: maxProcess, nCPU - ", maxProcess, nCPU)
-	}
 
 	var wg sync.WaitGroup
 	wg.Add(maxProcess)
