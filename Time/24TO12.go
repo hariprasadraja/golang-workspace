@@ -7,14 +7,15 @@ import (
 
 func main() {
 
-	a := []int{500, 330}
-	for i := 0; i < len(a); i++ {
-		data := getTime(a[i])
+
+	minuites := []int{500, 330}
+	for i := 0; i < len(minuites); i++ {
+		data := getTime(minuites[i])
 		log.Println(data)
 	}
 }
 
-func getTime(time int) string {
+func getTime(minuite int) string {
 	var currentMinuite string
 	var hour int
 	var minuites int

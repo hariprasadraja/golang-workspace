@@ -1,7 +1,7 @@
 package main
 
 import (
-	runner "golang-workspace/Runner"
+	"golang-workspace/GoRoutines/runner"
 	"log"
 	"os"
 	"sync"

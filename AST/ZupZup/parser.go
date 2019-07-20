@@ -24,11 +24,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// TEMP: Snippet for debugging. remove it before commit
-	spew.Print(strings.Repeat("-", 15) + "	Debug Begin: node" + strings.Repeat("-", 15) + "\n")
-	spew.Dump(node)
-	spew.Print(strings.Repeat("-", 15) + "	Debug End: node	" + strings.Repeat("-", 15) + "\n")
-
 	fmt.Println("Imports:")
 	for _, i := range node.Imports {
 		fmt.Println(i.Path.Value)
