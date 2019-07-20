@@ -1,6 +1,6 @@
 # Golang WorkSpace
 
-A Collection of works in Golang.
+A Collection of works and other experimental works in golang.
 
 <!-- List of Examples :  -->
 <!-- 
