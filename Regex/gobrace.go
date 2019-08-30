@@ -1,5 +1,6 @@
 package main
 
+// BUG(hariprasad): not working inside comments
 /*
 gobrace is a linting tool writern to format my go code.
 it will insert line break when it founds a brace followed by text in next line
