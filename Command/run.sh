@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-#echo "Hello World"
+echo "Hello World"
 
-mongorestore --db Linga LingaDb/
