@@ -8,9 +8,9 @@ import (
 
 func main() {
 
-	slice := generateSlice(20)
+	slice := GenerateSlice(20)
 	fmt.Println("\n--- Unsorted --- \n\n", slice)
-	bubblesort(slice)
+	BubbleSort(slice)
 	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
 }
 
@@ -20,9 +20,7 @@ func GenerateSlice(size int) []int {
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < size; i++ {
 		// Random data goes here...
-		// Example
-		// 		slice[i] = rand.Intn(999) - rand.Intn(999)
-
+		slice[i] = rand.Intn(999) - rand.Intn(999)
 	}
 
 	return slice
@@ -31,11 +29,12 @@ func GenerateSlice(size int) []int {
 /*
 BubbleSort sorts the given unSortedData into the sorted data. If the data is already sorted
 then it will return as it is without modification.
-Complexity
+Complexity:
 	Worst complexity: O(n^2)
 	Average complexity: O(n^2)
 	Best complexity: O(n)
 	Space complexity: O(1)
+Reference: https://en.wikipedia.org/wiki/Bubble_sort
 */
 func BubbleSort(unSortedData []int) (sortedData []int) {
 	var (
@@ -46,6 +45,8 @@ func BubbleSort(unSortedData []int) (sortedData []int) {
 	for !sorted {
 		swapped := false
 		for i := 0; i < n-1; i++ {
+
+			// sort ascending
 			if unSortedData[i] > unSortedData[i+1] {
 				unSortedData[i+1], unSortedData[i] = unSortedData[i], unSortedData[i+1]
 				swapped = true
