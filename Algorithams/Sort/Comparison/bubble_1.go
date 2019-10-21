@@ -1,27 +1,11 @@
-package main
+package comparison
 
-import (
-	"fmt"
-	"runtime/debug"
-)
-
-func main() {
-	var runes []rune = []rune{'a', 'G', 'c', 'F', 'z', 'D', 'h'}
-	fmt.Println("Unsorted:", string(runes))
-	bubbleSort(runes)
-	fmt.Println("Sorted:", string(runes))
-	debug.PrintStack()
-
-}
-
-func bubbleSort(numbers []rune) {
+func BubbleSort1(numbers []rune) {
 
 	var n = len(numbers)
 	for i := 0; i < n; i++ {
 		swap(numbers)
 	}
-	debug.PrintStack()
-
 }
 
 func swap(numbers []rune) {

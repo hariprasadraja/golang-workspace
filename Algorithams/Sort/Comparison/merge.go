@@ -1,30 +1,6 @@
-package main
+package comparison
 
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
-
-func main() {
-
-	slice := generateSlice(20)
-	fmt.Println("\n--- Unsorted --- \n\n", slice)
-	fmt.Println("\n--- Sorted ---\n\n", mergeSort(slice), "\n")
-}
-
-// Generates a slice of size, size filled with random numbers
-func generateSlice(size int) []int {
-
-	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		slice[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return slice
-}
-
-func mergeSort(items []int) []int {
+func MergeSort(items []int) []int {
 	var num = len(items)
 
 	if num == 1 {
@@ -44,7 +20,7 @@ func mergeSort(items []int) []int {
 		}
 	}
 
-	return merge(mergeSort(left), mergeSort(right))
+	return merge(MergeSort(left), MergeSort(right))
 }
 
 func merge(left, right []int) (result []int) {

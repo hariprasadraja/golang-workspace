@@ -1,29 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
-
-func main() {
-
-	slice := generateSlice(10)
-	fmt.Println("\n--- Unsorted --- \n\n", slice)
-	CombSort(slice)
-	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
-}
-
-// Generates a slice of size, size filled with random numbers
-func generateSlice(size int) []int {
-
-	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		slice[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return slice
-}
+package comparison
 
 /*
 CombSort sorts the given array using the comb sort algoritham

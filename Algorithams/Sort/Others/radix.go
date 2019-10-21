@@ -1,23 +1,14 @@
-package main
+package others
 
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
 )
 
 const digit = 4
 const maxbit = -1 << 31
 
-func main() {
-
-	var data = []int32{421, 15, -175, 90, -2, 214, -52, -166}
-	fmt.Println("\n--- Unsorted --- \n\n", data)
-	radixsort(data)
-	fmt.Println("\n--- Sorted ---\n\n", data, "\n")
-}
-
-func radixsort(data []int32) {
+func RadixSort(data []int32) {
 	buf := bytes.NewBuffer(nil)
 	ds := make([][]byte, len(data))
 	for i, e := range data {

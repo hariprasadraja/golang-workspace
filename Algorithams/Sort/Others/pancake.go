@@ -1,18 +1,10 @@
-package main
+package others
 
-import "fmt"
-
-func main() {
-	list := data{28, 11, 59, -26, 503, 158, 997, 193, -23, 44}
-	fmt.Println("\n--- Unsorted --- \n\n", list)
-
-	list.pancakesort()
-	fmt.Println("\n--- Sorted ---\n\n", list, "\n")
-}
+// Educational purpose only, extremley poor performance
 
 type data []int32
 
-func (dataList data) pancakesort() {
+func (dataList data) PancakeSort() {
 	for uns := len(dataList) - 1; uns > 0; uns-- {
 		// find largest in unsorted range
 		lx, lg := 0, dataList[0]
