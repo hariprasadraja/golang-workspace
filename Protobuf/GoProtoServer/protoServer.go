@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/golang/protobuf/proto"
+	"golang-workspace/Protobuf/ProtobufTest"
 	"net"
 	"os"
 

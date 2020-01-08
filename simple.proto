@@ -1,0 +1,12 @@
+
+syntax = "proto3";
+package tutorial;
+
+
+message Hello {
+string name  =  1;
+}
+
+service MyService {
+    rpc MethodName (Hello) returns (Hello);
+}
