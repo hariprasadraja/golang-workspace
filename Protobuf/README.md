@@ -3,5 +3,5 @@
 
 to execute the proto file
 ```
-protoc --go_out=. inputs/x.proto
+protoc --go_out=. <nane of the proto file>
 ```
