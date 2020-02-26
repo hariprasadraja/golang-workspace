@@ -1,4 +1,4 @@
-[submodule "Graphs/Astar"]
-	path = Graphs/Astar
-	url = https://github.com/hariprasadraja/Golang-AStar.git
-	branch = master
+[submodule "PathFinding/Astar"]
+path =PathFinding/Astar
+url = https://github.com/hariprasadraja/Golang-AStar.git
+branch = master
