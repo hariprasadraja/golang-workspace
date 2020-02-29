@@ -1,0 +1,8 @@
+github.com/golang/protobuf v1.3.4 h1:87PNWwrRvUSnqS4dlcBU/ftvOIBep4sYuBLlh6rX2wk=
+github.com/golang/protobuf v1.3.4/go.mod h1:vzj43D7+SQXF/4pzW/hwtAqwc6iTitCiVSaWz5lYuqw=
+github.com/gorilla/mux v1.7.4 h1:VuZ8uybHlWmqV03+zRzdwKL4tUnIp1MAQtp1mIFE1bc=
+github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/gorilla/rpc v1.2.0 h1:WvvdC2lNeT1SP32zrIce5l0ECBfbAlmrmSBsuc57wfk=
+github.com/gorilla/rpc v1.2.0/go.mod h1:V4h9r+4sF5HnzqbwIez0fKSpANP0zlYd3qR7p36jkTQ=
+github.com/haisum/rpcexample v0.0.0-20151013205443-7d034ca95162 h1:E+N1q3+Jm7VM+O5jXnrP9Pi5n14INJhnAvnI3cmn11w=
+github.com/haisum/rpcexample v0.0.0-20151013205443-7d034ca95162/go.mod h1:yLFdQzP0NfkTgXihMhk7CaRfDlAUv0hBjG475yEhimk=
