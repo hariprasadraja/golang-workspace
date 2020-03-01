@@ -2,31 +2,33 @@
 
 A Collection of works and other experimental works in golang.
 
-Checkout to diffirent branches to get more stuffs. 
+Since this workspace is getting huge, i have started moving things into diffrent branches.
+checkout to the other branches and see what you can get from there.
 
+Enjoy :)
 
 
 
 
 <!-- List of Examples :  -->
-<!-- 
+<!--
 1. Cryptography
-2. Monogdb 
+2. Monogdb
 3. JWT
 4. NSQ
 5. goroutiens-pooling
-6. PDF 
+6. PDF
 7. Password Generator
-8. Protobuf 
+8. Protobuf
 9. Profiling
 10. Slice Tricks
 11. Web Sockets
-12. Simple Go Server. 
-13. Go Templates 
+12. Simple Go Server.
+13. Go Templates
 14. File Cache POC
-15. Design Patterns. 
+15. Design Patterns.
 16. DataStructures and Alogritams.
-17. Go Benchmarking. 
+17. Go Benchmarking.
 18. Simple DOS Attack
 19. Go Email
 20. Task Scheduler. -->
