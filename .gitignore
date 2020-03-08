@@ -25,3 +25,6 @@ _testmain.go
 *.idea/
 
 Learning/
+
+go.mod
+go.sum
