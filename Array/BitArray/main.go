@@ -4,7 +4,9 @@ import (
 	"fmt"
 )
 
+// References:
 // https://en.wikipedia.org/wiki/Bit_array
+// https://github.com/golang-collections/go-datastructures/blob/master/bitarray/block.go
 
 // 	&    bitwise AND            integers
 // 	|    bitwise OR             integers
@@ -30,6 +32,18 @@ func InsertBit(bitArray BitArray, position uint64) BitArray {
 
 func RemoveBit(bitArray BitArray, position uint64) BitArray {
 	return bitArray & ^(1 << position)
+}
+
+func GetBit(bitArray BitArray, position uint64) bool {
+	return bitArray&BitArray(1<<position) != 0
+}
+
+func Equals(bitArray BitArray, other BitArray) bool {
+	return bitArray == other
+}
+
+func Intersects(bitArray BitArray, other BitArray) bool {
+	return bitArray&other == other
 }
 
 func main() {
