@@ -66,6 +66,8 @@
  66          buflen = buffersize;
  67          return true;
  68      }
+
+
  69
  70      ///
  71      /// \brief Clears the buffer of any allocations.

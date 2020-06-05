@@ -5,8 +5,14 @@ import (
 	"os"
 )
 
+// This file in put on HOLD. need to find ways to use mmap
+
 /*
 I have taken this from https://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=3479 and credit goes to Simon Cooke for his beautiful implementation of BipBuffer
+
+Also considered https://github.com/willemt/bipbuffer for implementing this
+
+
 */
 
 type BipBuffer struct {
@@ -27,8 +33,7 @@ func New() BipBuffer {
 	return BipBuffer{}
 }
 
-func (b *BipBuffer) AllocateBuffer(bufferSize uint) bool {
-
+func (b *BipBuffer) AllocateBuffer(bufferSize int) bool {
 	// default buffer size, if no size is given
 	if bufferSize == 0 {
 		bufferSize = 4096
@@ -43,7 +48,7 @@ func (b *BipBuffer) AllocateBuffer(bufferSize uint) bool {
 
 	// Calculate nearest page size
 	// QUESTION: I don't know how it works
-	bufferSize := ((bufferSize + os.Getpagesize() - 1) / os.Getpagesize()) * os.Getpagesize()
+	bufferSize = ((bufferSize + os.Getpagesize() - 1) / os.Getpagesize()) * os.Getpagesize()
 	b.buflen = bufferSize
 }
 
@@ -89,7 +94,7 @@ func (b *BipBuffer) Reserve(size int, reserved *int) int {
 			return 0
 		}
 
-		szResrv := freespace
+		b.szResrv := freespace
 		reserved = freespace
 		ixResrv := b.ixb + b.szb
 		return b.buflen + ixResrv
@@ -103,7 +108,7 @@ func (b *BipBuffer) Reserve(size int, reserved *int) int {
 				freespace = size
 			}
 
-			szResrv = freespace
+			b.szResrv = freespace
 			reserved = &freespace
 			b.ixResrv = b.ixa + b.sza
 			return b.buflen + b.ixResrv
@@ -113,13 +118,13 @@ func (b *BipBuffer) Reserve(size int, reserved *int) int {
 				return 0
 			}
 
-			if ixa < size {
-				size = ixa
+			if b.ixa < size {
+				size = b.ixa
 			}
 
-			szResrv = size
-			reserved = size
-			ixResrv = 0
+			b.szResrv = size
+			reserved = b.size
+			b.ixResrv = 0
 			return b.buflen
 		}
 	}
@@ -154,7 +159,7 @@ func (b *BipBuffer) Commit(size int) {
 		return
 	}
 
-	if ixResrv == sza+ixa {
+	if b.ixResrv == b.sza+b.ixa {
 		b.sza += size
 	} else {
 		b.szb += size
@@ -166,15 +171,16 @@ func (b *BipBuffer) Commit(size int) {
 
 func (b *BipBuffer) GetContiguousBlock(size *int) *int {
 	if b.sza == 0 {
-		size = 0
+		size = new(int)
 		return nil
 	}
 
-	size = sza
-	return &b.buflen + &b.ixa
+	size = &b.sza
+	a := b.buflen + b.ixa
+	return &a
 }
 
-func (b *BipBuffer) DecommitBlock(int size) {
+func (b *BipBuffer) DecommitBlock(size int) {
 	if size >= b.sza {
 		b.ixa = b.ixb
 		b.szResrv = b.szb
@@ -188,6 +194,21 @@ func (b *BipBuffer) DecommitBlock(int size) {
 
 func (b *BipBuffer) GetCommittedSize() int {
 	return b.sza + b.szb
+}
+func (b *BipBuffer) GetBufferSize() int {
+	return b.buflen
+}
+
+func (b *BipBuffer) IsInitialized() bool {
+	return b.buffer != nil
+}
+
+func (b *BipBuffer) GetSpaceAfterA() int {
+	return b.buflen - b.ixa - b.sza
+}
+
+func (b *BipBuffer) GetBFreeSpace() int {
+	return b.ixa - b.ixb - b.szb
 }
 
 func main() {
